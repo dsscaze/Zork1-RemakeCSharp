@@ -133,11 +133,55 @@ namespace ZorkBrasil.Core.Logica
                 "Manchas de sangue e arranhões profundos (talvez feitos por um machado) marcam as paredes.");
             salaTroll.Flags = FlagsSala.Iluminada;
 
+            // --- PASSAGEM LESTE-OESTE (EW-PASSAGE) ---
+            var passagemLesteOeste = new Sala("ew_passage", "Passagem Leste-Oeste",
+                "Esta é uma passagem estreita leste-oeste entre duas salas.");
+            passagemLesteOeste.Flags = FlagsSala.Iluminada;
+
+            // --- ABISMO (CHASM-ROOM) ---
+            var abismo = new Sala("chasm_room", "Abismo",
+                "Um abismo de pedra larga e terrível estende-se ao norte e sul, prevenindo qualquer travessia. " +
+                "O caminho leste-oeste continua nas outras extremidades. Você pode ver o fundo do abismo lá embaixo.");
+            abismo.Flags = FlagsSala.Iluminada;
+
+            // --- SALA REDONDA (ROUND-ROOM) ---
+            var salaRedonda = new Sala("round_room", "Sala Redonda",
+                "Esta é uma sala circular com passagens em todas as direções. Várias passagens se encontram aqui.");
+            salaRedonda.Flags = FlagsSala.Iluminada;
+
+            // --- PASSAGEM NORTE-SUL (NS-PASSAGE) ---
+            var passagemNorteSul = new Sala("ns_passage", "Passagem Norte-Sul",
+                "Esta é uma passagem estreita norte-sul. Há passagens levando para fora em todas as direções.");
+            passagemNorteSul.Flags = FlagsSala.Iluminada;
+
             // --- LESTE DO ABISMO (EAST-OF-CHASM) ---
             var lesteAbismo = new Sala("east_of_chasm", "Leste do Abismo",
                 "Você está na borda leste de um abismo, cujo fundo não pode ser visto. Uma passagem estreita vai ao norte, " +
                 "e o caminho em que você está continua a leste.");
             lesteAbismo.Flags = FlagsSala.Iluminada;
+
+            // --- LABIRINTO ---
+            // Todas as salas do labirinto têm descrições idênticas propositalmente
+
+            // --- LABIRINTO 1 (MAZE-1) ---
+            var labirinto1 = new Sala("maze_1", "Labirinto",
+                "Você está em um labirinto de passagens tortuosas, todas iguais.");
+            labirinto1.Flags = FlagsSala.Iluminada;
+
+            // --- LABIRINTO 2 (MAZE-2) ---
+            var labirinto2 = new Sala("maze_2", "Labirinto",
+                "Você está em um labirinto de passagens tortuosas, todas iguais.");
+            labirinto2.Flags = FlagsSala.Iluminada;
+
+            // --- LABIRINTO 3 (MAZE-3) ---
+            var labirinto3 = new Sala("maze_3", "Labirinto",
+                "Você está em um labirinto de passagens tortuosas, todas iguais.");
+            labirinto3.Flags = FlagsSala.Iluminada;
+
+            // --- LABIRINTO 4 (MAZE-4) ---
+            var labirinto4 = new Sala("maze_4", "Labirinto",
+                "Você está em um labirinto de passagens tortuosas, todas iguais.");
+            labirinto4.Flags = FlagsSala.Iluminada;
 
 
             // --- FLORESTA 1 ---
@@ -360,12 +404,56 @@ namespace ZorkBrasil.Core.Logica
 
             // TROLL-ROOM
             salaTroll.DefinirSaida(Direcao.Sul, "cellar");
-            salaTroll.DefinirSaida(Direcao.Leste, "ew_passage", bloqueada: true, msgBloqueio: "O troll afasta você com um gesto ameaçador.");
-            salaTroll.DefinirSaida(Direcao.Oeste, "maze_1", bloqueada: true, msgBloqueio: "O troll afasta você com um gesto ameaçador.");
+            salaTroll.DefinirSaida(Direcao.Leste, "ew_passage");
+            salaTroll.DefinirSaida(Direcao.Oeste, "maze_1");
 
             // EAST-OF-CHASM
             lesteAbismo.DefinirSaida(Direcao.Norte, "cellar");
             lesteAbismo.DefinirSaida(Direcao.Leste, "gallery");
+
+            // EW-PASSAGE (Passagem Leste-Oeste)
+            passagemLesteOeste.DefinirSaida(Direcao.Leste, "round_room");
+            passagemLesteOeste.DefinirSaida(Direcao.Oeste, "troll_room");
+            passagemLesteOeste.DefinirSaida(Direcao.Baixo, "chasm_room");
+            passagemLesteOeste.DefinirSaida(Direcao.Norte, "chasm_room");
+
+            // CHASM-ROOM (Abismo)
+            // abismo.DefinirSaida(Direcao.Nordeste, "reservoir_south"); // TODO: Criar RESERVOIR-SOUTH
+            abismo.DefinirSaida(Direcao.Sudoeste, "ew_passage");
+            abismo.DefinirSaida(Direcao.Cima, "ew_passage");
+            abismo.DefinirSaida(Direcao.Sul, "ns_passage");
+
+            // ROUND-ROOM (Sala Redonda)
+            // salaRedonda.DefinirSaida(Direcao.Leste, "loud_room"); // TODO: Criar LOUD-ROOM
+            salaRedonda.DefinirSaida(Direcao.Oeste, "ew_passage");
+            salaRedonda.DefinirSaida(Direcao.Norte, "ns_passage");
+            // salaRedonda.DefinirSaida(Direcao.Sul, "narrow_passage"); // TODO: Criar NARROW-PASSAGE
+            // salaRedonda.DefinirSaida(Direcao.Sudeste, "engravings_cave"); // TODO: Criar ENGRAVINGS-CAVE
+
+            // NS-PASSAGE (Passagem Norte-Sul)
+            passagemNorteSul.DefinirSaida(Direcao.Norte, "chasm_room");
+            // passagemNorteSul.DefinirSaida(Direcao.Nordeste, "deep_canyon"); // TODO: Criar DEEP-CANYON
+            passagemNorteSul.DefinirSaida(Direcao.Sul, "round_room");
+
+            // MAZE-1 (Labirinto 1)
+            labirinto1.DefinirSaida(Direcao.Leste, "troll_room");
+            labirinto1.DefinirSaida(Direcao.Norte, "maze_1"); // Loop para si mesmo
+            labirinto1.DefinirSaida(Direcao.Sul, "maze_2");
+            labirinto1.DefinirSaida(Direcao.Oeste, "maze_4");
+
+            // MAZE-2 (Labirinto 2)
+            labirinto2.DefinirSaida(Direcao.Norte, "maze_1");
+            labirinto2.DefinirSaida(Direcao.Leste, "maze_3");
+
+            // MAZE-3 (Labirinto 3)
+            labirinto3.DefinirSaida(Direcao.Oeste, "maze_2");
+            labirinto3.DefinirSaida(Direcao.Norte, "maze_4");
+            // labirinto3.DefinirSaida(Direcao.Cima, "maze_5"); // TODO: Criar MAZE-5
+
+            // MAZE-4 (Labirinto 4)
+            labirinto4.DefinirSaida(Direcao.Oeste, "maze_3");
+            labirinto4.DefinirSaida(Direcao.Norte, "maze_1");
+            // labirinto4.DefinirSaida(Direcao.Leste, "dead_end_1"); // TODO: Criar DEAD-END-1
 
             // FOREST-PATH
             caminhoFloresta.DefinirSaida(Direcao.Cima, "up_tree");
@@ -442,6 +530,16 @@ namespace ZorkBrasil.Core.Logica
             mundo.Add(canyonView.Id, canyonView);
             mundo.Add(montanhas.Id, montanhas);
             mundo.Add(gratingRoom.Id, gratingRoom);
+            
+            // Novas salas relacionadas ao TROLL-ROOM
+            mundo.Add(passagemLesteOeste.Id, passagemLesteOeste);
+            mundo.Add(abismo.Id, abismo);
+            mundo.Add(salaRedonda.Id, salaRedonda);
+            mundo.Add(passagemNorteSul.Id, passagemNorteSul);
+            mundo.Add(labirinto1.Id, labirinto1);
+            mundo.Add(labirinto2.Id, labirinto2);
+            mundo.Add(labirinto3.Id, labirinto3);
+            mundo.Add(labirinto4.Id, labirinto4);
 
             return mundo;
         }
