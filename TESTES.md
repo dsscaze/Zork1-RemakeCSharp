@@ -2,21 +2,23 @@
 
 ## 📋 Resumo dos Testes
 
-O projeto agora inclui **23 testes automatizados** usando xUnit para garantir que funcionalidades críticas não quebrem durante o desenvolvimento.
+O projeto inclui **23 testes automatizados** usando xUnit para garantir que funcionalidades críticas não quebrem durante o desenvolvimento.
 
 ## 🏗️ Estrutura do Projeto
 
 ```
 ZorkBrasil/
 ├── Game/                          # Código-fonte do jogo
-│   ├── Core/                      # Lógica principal
+│   ├── Core/                      # Lógica principal (Motor, Mapa, Modelos)
+│   ├── EstruturaOriginal/         # Arquivos de referência ZIL
 │   ├── Interface/                 # Interface (futuro)
 │   ├── Program.cs                 # Ponto de entrada
 │   └── ZorkBrasil.Game.csproj     # Projeto do jogo
 ├── Tests/                         # Testes automatizados
-│   ├── GameFlowTests.cs           # Testes de fluxo
+│   ├── GameFlowTests.cs           # 23 testes de fluxo do jogo
 │   └── ZorkBrasil.Tests.csproj    # Projeto de testes
-├── EstruturaOriginal/             # Arquivos de referência ZIL
+├── README.md                      # Documentação principal
+├── TESTES.md                      # Este arquivo
 └── ZorkBrasil.sln                 # Solution principal
 ```
 
@@ -84,10 +86,23 @@ dotnet test Tests/ZorkBrasil.Tests.csproj
 
 ### Testes que Precisam de Correções
 
-1. **DeveConseguirChegarAteOPorao** - O caminho para o porão precisa de ajustes
-2. **DeveImpedirMovimentoNoEscuroSemLanterna** - Lógica de escuridão precisa ser implementada
-3. **DevePermitirAbrirOvo** - Comando "abrir" para o ovo precisa ser implementado
-4. **DeveBloquearMovimentoInválido** - Mensagem de erro precisa ser ajustada
+Os seguintes testes falharam na última execução e precisam de implementação ou ajustes:
+
+1. **DeveBloquearMovimentoInválido** 
+   - **Erro**: Mensagem esperada `"Você não pode ir nessa direção"` mas recebeu `"Você não pode ir para lá."`
+   - **Solução**: Ajustar mensagem no Motor ou atualizar teste
+
+2. **DeveConseguirChegarAteOPorao** 
+   - **Erro**: Não encontrou a palavra "Porão" na saída
+   - **Solução**: Verificar sequência de comandos para chegar ao porão (alçapão, tapete, etc)
+
+3. **DeveImpedirMovimentoNoEscuroSemLanterna** 
+   - **Erro**: Lógica de escuridão não está impedindo movimento
+   - **Solução**: Implementar verificação de luz no Motor antes de permitir movimento
+
+4. **DevePermitirAbrirOvo** 
+   - **Erro**: Comando "abrir ovo" não está retornando resposta
+   - **Solução**: Implementar lógica de abertura do ovo no Motor
 
 ## 🎮 Executando o Jogo
 
