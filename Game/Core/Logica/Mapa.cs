@@ -395,10 +395,10 @@ namespace ZorkBrasil.Core.Logica
             salaEstar.DefinirSaida(Direcao.Leste, "kitchen");
             // salaEstar.DefinirSaida(Direcao.Oeste, "strange_passage"); // Futuro
             // Alçapão para o porão (Bloqueada até mover tapete e abrir alçapão)
-            // salaEstar.DefinirSaida(Direcao.Baixo, "cellar", bloqueada: true, msgBloqueio: "Você não consegue atravessar o chão.");
+            salaEstar.DefinirSaida(Direcao.Baixo, "cellar", bloqueada: true, msgBloqueio: "Você não consegue atravessar o chão.");
 
             // CELLAR
-            // porao.DefinirSaida(Direcao.Cima, "living_room", bloqueada: true, msgBloqueio: "O alçapão está fechado.");
+            porao.DefinirSaida(Direcao.Cima, "living_room", bloqueada: true, msgBloqueio: "O alçapão está fechado.");
             porao.DefinirSaida(Direcao.Norte, "troll_room");
             porao.DefinirSaida(Direcao.Sul, "east_of_chasm");
 
