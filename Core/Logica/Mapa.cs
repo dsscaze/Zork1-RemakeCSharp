@@ -265,6 +265,27 @@ namespace ZorkBrasil.Core.Logica
             cimaArvore.Itens.Add(ninho);
 
 
+            // --- CANYON-VIEW (Vista do Cânion) ---
+            var canyonView = new Sala("canyon_view", "Vista do Cânion",
+                "Você está no topo do Grande Cânion em sua parede oeste. Daqui há uma vista maravilhosa do cânion e partes " +
+                "do Rio Frígido a montante. Do outro lado do cânion, as paredes das Falésias Brancas se juntam às " +
+                "poderosas muralhas das Montanhas Flathead ao leste. Seguindo o Cânion a montante para o norte, as Cataratas " +
+                "Aragain podem ser vistas, completas com arco-íris. O poderoso Rio Frígido flui para fora de uma grande caverna escura. " +
+                "A oeste e sul pode-se ver uma floresta imensa, estendendo-se por quilômetros ao redor. Um caminho segue a noroeste. " +
+                "É possível descer até o cânion daqui.");
+            canyonView.Flags = FlagsSala.Iluminada;
+
+            // --- MOUNTAINS (Montanhas) ---
+            var montanhas = new Sala("mountains", "Floresta",
+                "A floresta afina aqui, revelando montanhas intransponíveis.");
+            montanhas.Flags = FlagsSala.Iluminada;
+
+            // --- GRATING-ROOM (Sala da Grade) ---
+            var gratingRoom = new Sala("grating_room", "Sala da Grade",
+                "Você está em uma pequena sala perto do labirinto. Há passagens tortuosas nas imediações.");
+            gratingRoom.Flags = FlagsSala.Nenhuma; // Escura - precisa de luz
+
+
             // =========================================================================
             // 3. DEFINIÇÃO DAS CONEXÕES (SAÍDAS) - BASEADO NO JSON ORIGINAL
             // =========================================================================
@@ -273,34 +294,40 @@ namespace ZorkBrasil.Core.Logica
             oesteCasa.DefinirSaida(Direcao.Norte, "north_house");
             oesteCasa.DefinirSaida(Direcao.Sul, "south_house");
             oesteCasa.DefinirSaida(Direcao.Oeste, "forest_1");
-            // NE, SE, SW e IN ainda não implementados (precisam de direções diagonais)
+            oesteCasa.DefinirSaida(Direcao.Nordeste, "north_house");
+            oesteCasa.DefinirSaida(Direcao.Sudeste, "south_house");
+            // OBS: SW para STONE-BARROW implementado condicionalmente no Motor quando WON-FLAG
+            // OBS: IN para LIVING-ROOM implementado condicionalmente no Motor quando MAGIC-FLAG (porta destrancada)
 
             // NORTH-OF-HOUSE
             norteCasa.DefinirSaida(Direcao.Oeste, "west_house");
             norteCasa.DefinirSaida(Direcao.Leste, "east_house");
             norteCasa.DefinirSaida(Direcao.Norte, "forest_path");
-            // SW, SE ainda não implementados (precisam de direções diagonais)
+            norteCasa.DefinirSaida(Direcao.Sudoeste, "west_house");
+            norteCasa.DefinirSaida(Direcao.Sudeste, "east_house");
 
             // SOUTH-OF-HOUSE
             sulCasa.DefinirSaida(Direcao.Oeste, "west_house");
             sulCasa.DefinirSaida(Direcao.Leste, "east_house");
             sulCasa.DefinirSaida(Direcao.Sul, "forest_3");
-            // NE, NW ainda não implementados (precisam de direções diagonais)
+            sulCasa.DefinirSaida(Direcao.Nordeste, "east_house");
+            sulCasa.DefinirSaida(Direcao.Noroeste, "west_house");
 
             // EAST-OF-HOUSE (Behind House)
             lesteCasa.DefinirSaida(Direcao.Norte, "north_house");
             lesteCasa.DefinirSaida(Direcao.Sul, "south_house");
             lesteCasa.DefinirSaida(Direcao.Leste, "clearing");
+            lesteCasa.DefinirSaida(Direcao.Sudoeste, "south_house");
+            lesteCasa.DefinirSaida(Direcao.Noroeste, "north_house");
             // Janela para a cozinha (Bloqueada até abrir a janela)
             lesteCasa.DefinirSaida(Direcao.Oeste, "kitchen", bloqueada: true, msgBloqueio: "A janela está fechada.");
             lesteCasa.DefinirSaida(Direcao.Entrar, "kitchen", bloqueada: true, msgBloqueio: "A janela está fechada.");
-            // SW, NW ainda não implementados
 
             // CLEARING
             clearing.DefinirSaida(Direcao.Norte, "forest_2");
             clearing.DefinirSaida(Direcao.Sul, "forest_3");
             clearing.DefinirSaida(Direcao.Oeste, "east_house");
-            // clearing.DefinirSaida(Direcao.Leste, "canyon_view"); // Futuro
+            clearing.DefinirSaida(Direcao.Leste, "canyon_view");
 
             // KITCHEN
             cozinha.DefinirSaida(Direcao.Leste, "east_house"); 
@@ -354,27 +381,39 @@ namespace ZorkBrasil.Core.Logica
             floresta1.DefinirSaida(Direcao.Norte, "grating_clearing");
             floresta1.DefinirSaida(Direcao.Leste, "forest_path");
             floresta1.DefinirSaida(Direcao.Sul, "forest_3");
+            floresta1.DefinirSaida(Direcao.Oeste, "west_house");
 
             // FOREST-2
             floresta2.DefinirSaida(Direcao.Sul, "clearing");
             floresta2.DefinirSaida(Direcao.Oeste, "forest_path");
-            // floresta2.DefinirSaida(Direcao.Leste, "mountains"); // Futuro
+            floresta2.DefinirSaida(Direcao.Leste, "mountains");
 
             // FOREST-3
             floresta3.DefinirSaida(Direcao.Norte, "clearing");
             floresta3.DefinirSaida(Direcao.Oeste, "forest_1");
-            // floresta3.DefinirSaida(Direcao.NW, "south_house"); // Requer direção diagonal
+            floresta3.DefinirSaida(Direcao.Noroeste, "south_house");
 
             // GRATING-CLEARING
             clareia.DefinirSaida(Direcao.Leste, "forest_2");
             clareia.DefinirSaida(Direcao.Oeste, "forest_1");
             clareia.DefinirSaida(Direcao.Sul, "forest_path");
+            clareia.DefinirSaida(Direcao.Baixo, "grating_room", bloqueada: true, msgBloqueio: "A grade está fechada.");
 
             // STONE-BARROW
-            // pedreiraBarrow.DefinirSaida(Direcao.NE, "west_house"); // Requer direção diagonal
+            pedreiraBarrow.DefinirSaida(Direcao.Nordeste, "west_house");
 
-            // CLEARING (conecta com EAST-OF-HOUSE)
-            // Nota: CLEARING ainda não foi criada como sala, será necessário criar depois
+            // CANYON-VIEW
+            canyonView.DefinirSaida(Direcao.Noroeste, "clearing");
+            canyonView.DefinirSaida(Direcao.Oeste, "forest_3");
+
+            // MOUNTAINS
+            montanhas.DefinirSaida(Direcao.Norte, "forest_2");
+            montanhas.DefinirSaida(Direcao.Sul, "forest_2");
+            montanhas.DefinirSaida(Direcao.Oeste, "forest_2");
+
+            // GRATING-ROOM
+            gratingRoom.DefinirSaida(Direcao.Sudoeste, "maze_11");
+            gratingRoom.DefinirSaida(Direcao.Cima, "grating_clearing", bloqueada: true, msgBloqueio: "A grade está fechada.");
 
 
             // =========================================================================
@@ -400,6 +439,9 @@ namespace ZorkBrasil.Core.Logica
             mundo.Add(clearing.Id, clearing);
             mundo.Add(caminhoFloresta.Id, caminhoFloresta);
             mundo.Add(cimaArvore.Id, cimaArvore);
+            mundo.Add(canyonView.Id, canyonView);
+            mundo.Add(montanhas.Id, montanhas);
+            mundo.Add(gratingRoom.Id, gratingRoom);
 
             return mundo;
         }
