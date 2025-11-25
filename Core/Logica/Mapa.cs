@@ -122,9 +122,22 @@ namespace ZorkBrasil.Core.Logica
 
             // --- PORÃO (CELLAR) ---
             var porao = new Sala("cellar", "Porão",
-                "Você está em um porão escuro e úmido. Uma passagem estreita leva para o leste, e você pode subir de volta pela escada.");
+                "Você está em um porão escuro e úmido com uma passagem estreita levando ao norte, e um túnel rasteiro ao sul. " +
+                "A oeste está a base de uma rampa de metal íngreme que é impossível de subir.");
             // IMPORTANTE: Sem flag Iluminada. Só se vê com lanterna.
             porao.Flags = FlagsSala.Interior;
+
+            // --- SALA DO TROLL (TROLL-ROOM) ---
+            var salaTroll = new Sala("troll_room", "A Sala do Troll",
+                "Esta é uma pequena sala com passagens a leste e sul e um buraco assustador levando a oeste. " +
+                "Manchas de sangue e arranhões profundos (talvez feitos por um machado) marcam as paredes.");
+            salaTroll.Flags = FlagsSala.Iluminada;
+
+            // --- LESTE DO ABISMO (EAST-OF-CHASM) ---
+            var lesteAbismo = new Sala("east_of_chasm", "Leste do Abismo",
+                "Você está na borda leste de um abismo, cujo fundo não pode ser visto. Uma passagem estreita vai ao norte, " +
+                "e o caminho em que você está continua a leste.");
+            lesteAbismo.Flags = FlagsSala.Iluminada;
 
 
             // --- FLORESTA 1 ---
@@ -305,7 +318,7 @@ namespace ZorkBrasil.Core.Logica
 
             // GALLERY
             galeria.DefinirSaida(Direcao.Norte, "studio");
-            // galeria.DefinirSaida(Direcao.Oeste, "east_of_chasm"); // Futuro
+            galeria.DefinirSaida(Direcao.Oeste, "east_of_chasm");
 
             // LIVING-ROOM
             salaEstar.DefinirSaida(Direcao.Leste, "kitchen");
@@ -315,8 +328,17 @@ namespace ZorkBrasil.Core.Logica
 
             // CELLAR
             // porao.DefinirSaida(Direcao.Cima, "living_room", bloqueada: true, msgBloqueio: "O alçapão está fechado.");
-            // porao.DefinirSaida(Direcao.Norte, "troll_room"); // Futuro
-            // porao.DefinirSaida(Direcao.Sul, "east_of_chasm"); // Futuro
+            porao.DefinirSaida(Direcao.Norte, "troll_room");
+            porao.DefinirSaida(Direcao.Sul, "east_of_chasm");
+
+            // TROLL-ROOM
+            salaTroll.DefinirSaida(Direcao.Sul, "cellar");
+            salaTroll.DefinirSaida(Direcao.Leste, "ew_passage", bloqueada: true, msgBloqueio: "O troll afasta você com um gesto ameaçador.");
+            salaTroll.DefinirSaida(Direcao.Oeste, "maze_1", bloqueada: true, msgBloqueio: "O troll afasta você com um gesto ameaçador.");
+
+            // EAST-OF-CHASM
+            lesteAbismo.DefinirSaida(Direcao.Norte, "cellar");
+            lesteAbismo.DefinirSaida(Direcao.Leste, "gallery");
 
             // FOREST-PATH
             caminhoFloresta.DefinirSaida(Direcao.Cima, "up_tree");
@@ -365,6 +387,8 @@ namespace ZorkBrasil.Core.Logica
             mundo.Add(cozinha.Id, cozinha);
             mundo.Add(salaEstar.Id, salaEstar);
             mundo.Add(porao.Id, porao);
+            mundo.Add(salaTroll.Id, salaTroll);
+            mundo.Add(lesteAbismo.Id, lesteAbismo);
             mundo.Add(soton.Id, soton);
             mundo.Add(estudio.Id, estudio);
             mundo.Add(galeria.Id, galeria);
