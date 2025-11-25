@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Viewer Zork 1</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      height: 100vh;
+      color: #222;
+    }
+
+    .sidebar {
+      width: 320px;
+      border-right: 1px solid #ddd;
+      padding: 8px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: #fafafa;
+    }
+
+    .sidebar h1 {
+      font-size: 16px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+
+    .room-list {
+      flex: 1;
+      overflow-y: auto;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .room-item {
+      padding: 6px 8px;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 13px;
+    }
+
+    .room-item:last-child {
+      border-bottom: none;
+    }
+
+    .room-item:hover {
+      background: #f5f5f5;
+    }
+
+    .room-item.active {
+      background: #e0f0ff;
+    }
+
+    .room-id {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .room-desc {
+      color: #555;
+      font-size: 12px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 12px 16px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      background: #ffffff;
+    }
+
+    .content h2 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .content .room-id-text {
+      font-family: "Consolas", "Fira Code", monospace;
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 2px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid #ccc;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      background: #f8f8f8;
+    }
+
+    .badge.direction {
+      border-color: #1976d2;
+      background: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .badge-object {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      border: 1px solid #ccc;
+      margin: 2px 4px 2px 0;
+      background: #fefefe;
+    }
+
+    code {
+      background: #f6f6f6;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .summary-bar {
+      font-size: 11px;
+      color: #555;
+    }
+
+    .summary-bar span {
+      margin-right: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: #fff;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1>Mapa Zork 1 (JSON)</h1>
+    <div class="summary-bar">
+      <span id="summary-rooms">Salas: …</span>
+      <span id="summary-objects">Objetos: …</span>
+    </div>
+    <div class="search-box">
+      <input id="search-input" type="text" placeholder="Filtrar salas por id/descrição..." />
+    </div>
+    <div class="room-list" id="room-list"></div>
+  </div>
+
+  <div class="content" id="content">
+    <p>Carregando <code>mapa_zork1.json</code>…</p>
+  </div>
+
+  <script>
+    const STATE = {
+      data: null,
+      rooms: [],
+      filteredRooms: [],
+      currentRoomId: null,
+      objectsById: {}
+    };
+
+    function directionLabel(dir) {
+      const map = {
+        N: "NORTH", S: "SOUTH", E: "EAST", W: "WEST",
+        U: "UP", D: "DOWN"
+      };
+      return map[dir] || dir;
+    }
+
+    function loadData() {
+      return fetch("mapa_zork1.json")
+        .then(r => {
+          if (!r.ok) throw new Error("Erro ao carregar mapa_zork1.json");
+          return r.json();
+        })
+        .then(data => {
+          STATE.data = data;
+          STATE.rooms = data.rooms || [];
+          STATE.filteredRooms = STATE.rooms.slice();
+
+          const objs = data.objects || [];
+          STATE.objectsById = {};
+          for (const o of objs) {
+            STATE.objectsById[o.id] = o;
+          }
+
+          renderSidebar();
+          renderSummary();
+          if (STATE.filteredRooms.length > 0) {
+            selectRoom(STATE.filteredRooms[0].id);
+          } else {
+            document.getElementById("content").innerHTML = "<p>Nenhuma sala encontrada.</p>";
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("content").innerHTML =
+            "<p style='color:red'>Erro ao carregar mapa_zork1.json. Verifique se o arquivo está na mesma pasta e se está acessando via servidor HTTP.</p>";
+        });
+    }
+
+    function renderSummary() {
+      const summaryRooms = document.getElementById("summary-rooms");
+      const summaryObjects = document.getElementById("summary-objects");
+
+      const summary = STATE.data && STATE.data.summary ? STATE.data.summary : {};
+      const roomCount = summary.room_count ?? (STATE.rooms ? STATE.rooms.length : 0);
+      const objectCount = summary.object_count ?? (STATE.data.objects ? STATE.data.objects.length : 0);
+
+      summaryRooms.textContent = "Salas: " + roomCount;
+      summaryObjects.textContent = "Objetos: " + objectCount;
+    }
+
+    function renderSidebar() {
+      const listEl = document.getElementById("room-list");
+      listEl.innerHTML = "";
+
+      STATE.filteredRooms.forEach(room => {
+        const item = document.createElement("div");
+        item.className = "room-item";
+        if (room.id === STATE.currentRoomId) {
+          item.classList.add("active");
+        }
+        item.dataset.roomId = room.id;
+
+        const idSpan = document.createElement("span");
+        idSpan.className = "room-id";
+        idSpan.textContent = room.id;
+
+        const descSpan = document.createElement("span");
+        descSpan.className = "room-desc";
+        descSpan.textContent = room.desc || "";
+
+        item.appendChild(idSpan);
+        if (room.desc) {
+          item.appendChild(descSpan);
+        }
+
+        item.addEventListener("click", () => {
+          selectRoom(room.id);
+        });
+
+        listEl.appendChild(item);
+      });
+    }
+
+    function selectRoom(roomId) {
+      STATE.currentRoomId = roomId;
+      renderSidebar();
+      renderRoom(roomId);
+    }
+
+    function renderRoom(roomId) {
+      const room = STATE.rooms.find(r => r.id === roomId);
+      const content = document.getElementById("content");
+
+      if (!room) {
+        content.innerHTML = "<p>Sala não encontrada.</p>";
+        return;
+      }
+
+      const exits = room.exits || {};
+      const directObjs = room.objects_direct || [];
+      const indirectObjs = room.objects_indirect || [];
+
+      let html = "";
+
+      html += `<h2>${room.desc || room.id}</h2>`;
+      html += `<div class="room-id-text">ROOM ID: <code>${room.id}</code></div>`;
+
+      // Saídas
+      html += `<div class="section">
+        <h3>Saídas</h3>`;
+
+      const dirs = Object.keys(exits).sort();
+      if (dirs.length === 0) {
+        html += `<p class="small">Nenhuma saída mapeada pelo parser (pode ser área especial ou saída complexa).</p>`;
+      } else {
+        html += `<p>`;
+        dirs.forEach(d => {
+          const dests = exits[d] || [];
+          const label = directionLabel(d);
+          dests.forEach(dest => {
+            html += `<span class="badge direction">${label} → ${dest}</span> `;
+          });
+        });
+        html += `</p>`;
+      }
+      html += `</div>`;
+
+      // Objetos diretos
+      html += `<div class="section">
+        <h3>Objetos diretos (LOC = sala)</h3>`;
+
+      if (directObjs.length === 0) {
+        html += `<p class="small">Nenhum objeto diretamente nesta sala.</p>`;
+      } else {
+        html += `<p>`;
+        directObjs.forEach(o => {
+          html += `<span class="badge-object"><code>${o.id}</code>`;
+          if (o.desc) {
+            html += ` — ${o.desc}`;
+          }
+          html += `</span><br/>`;
+        });
+        html += `</p>`;
+      }
+      html += `</div>`;
+
+      // Objetos indiretos
+      html += `<div class="section">
+        <h3>Objetos indiretos (via containers)</h3>`;
+
+      if (indirectObjs.length === 0) {
+        html += `<p class="small">Nenhum objeto indireto mapeado para esta sala.</p>`;
+      } else {
+        html += `<p>`;
+        indirectObjs.forEach(o => {
+          const chain = o.container_chain || [];
+          let chainText = "";
+          if (chain.length > 0) {
+            chainText = " (dentro de " + chain.map(c => c).join(" → ") + ")";
+          }
+
+          html += `<span class="badge-object"><code>${o.id}</code>`;
+          if (o.desc) {
+            html += ` — ${o.desc}`;
+          }
+          html += `${chainText}</span><br/>`;
+        });
+        html += `</p>`;
+      }
+      html += `</div>`;
+
+      // Debug / info extra opcional
+      html += `<div class="section">
+        <h3>Debug rápido</h3>
+        <p class="small">
+          Esta sala possui <strong>${directObjs.length}</strong> objetos diretos e
+          <strong>${indirectObjs.length}</strong> objetos indiretos resolvidos via container.
+        </p>
+        <p class="small">
+          Dados vindos de <code>mapa_zork1.json</code>. Você pode inspecionar o JSON completo no editor
+          para extrações programáticas.
+        </p>
+      </div>`;
+
+      content.innerHTML = html;
+    }
+
+    function setupSearch() {
+      const input = document.getElementById("search-input");
+      input.addEventListener("input", () => {
+        const term = input.value.toLowerCase().trim();
+        if (!term) {
+          STATE.filteredRooms = STATE.rooms.slice();
+        } else {
+          STATE.filteredRooms = STATE.rooms.filter(r => {
+            const id = (r.id || "").toLowerCase();
+            const desc = (r.desc || "").toLowerCase();
+            return id.includes(term) || desc.includes(term);
+          });
+        }
+        renderSidebar();
+        if (STATE.filteredRooms.length > 0) {
+          // Se a sala selecionada atual não estiver na lista filtrada,
+          // seleciona a primeira.
+          const currentStillVisible = STATE.filteredRooms.some(r => r.id === STATE.currentRoomId);
+          if (!currentStillVisible) {
+            selectRoom(STATE.filteredRooms[0].id);
+          }
+        } else {
+          document.getElementById("content").innerHTML =
+            "<p>Nenhuma sala corresponde ao filtro.</p>";
+        }
+      });
+    }
+
+    // Inicializa
+    setupSearch();
+    loadData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1878 @@
+{
+  "meta": {
+    "source_file": "1dungeon.zil",
+    "room_count": 0,
+    "object_count": 122,
+    "enemy_ids_heuristic": [
+      "BAT",
+      "CYCLOPS",
+      "THIEF",
+      "TROLL"
+    ],
+    "enemy_flags_heuristic": [
+      "ACTORBIT",
+      "FIGHTBIT",
+      "LIVINGBIT",
+      "MONSTERBIT",
+      "VILLAIN"
+    ]
+  },
+  "rooms": {},
+  "objects": {
+    "BOARD": {
+      "id": "BOARD",
+      "desc": "board",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM BOARDS BOARD)\n\t(DESC \"board\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BOARD-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TEETH": {
+      "id": "TEETH",
+      "desc": "set of teeth",
+      "raw_body": "(IN GLOBAL-OBJECTS)\n\t(SYNONYM OVERBOARD TEETH)\n\t(DESC \"set of teeth\")\n\t(FLAGS NDESCBIT)\n\t(ACTION TEETH-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "WALL": {
+      "id": "WALL",
+      "desc": "surrounding wall",
+      "raw_body": "(IN GLOBAL-OBJECTS)\n\t(SYNONYM WALL WALLS)\n\t(ADJECTIVE SURROUNDING)\n\t(DESC \"surrounding wall\")",
+      "raw_loc": null,
+      "flags": [],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GRANITE-WALL": {
+      "id": "GRANITE-WALL",
+      "desc": "granite wall",
+      "raw_body": "(IN GLOBAL-OBJECTS)\n\t(SYNONYM WALL)\n\t(ADJECTIVE GRANITE)\n\t(DESC \"granite wall\")\n\t(ACTION GRANITE-WALL-F)",
+      "raw_loc": null,
+      "flags": [],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SONGBIRD": {
+      "id": "SONGBIRD",
+      "desc": "songbird",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM BIRD SONGBIRD)\n\t(ADJECTIVE SONG)\n\t(DESC \"songbird\")\n\t(FLAGS NDESCBIT)\n\t(ACTION SONGBIRD-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "WHITE-HOUSE": {
+      "id": "WHITE-HOUSE",
+      "desc": "white house",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM HOUSE)\n\t(ADJECTIVE WHITE BEAUTI COLONI)\n\t(DESC \"white house\")\n\t(FLAGS NDESCBIT)\n\t(ACTION WHITE-HOUSE-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "FOREST": {
+      "id": "FOREST",
+      "desc": "forest",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM FOREST TREES PINES HEMLOCKS)\n\t(DESC \"forest\")\n\t(FLAGS NDESCBIT)\n\t(ACTION FOREST-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TREE": {
+      "id": "TREE",
+      "desc": "-TOSSED",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM TREE BRANCH)\n\t(ADJECTIVE LARGE STORM ;\"-TOSSED\")\n\t(DESC \"tree\")\n\t(FLAGS NDESCBIT CLIMBBIT)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MOUNTAIN-RANGE": {
+      "id": "MOUNTAIN-RANGE",
+      "desc": "mountain range",
+      "raw_body": "(IN MOUNTAINS)\n\t(DESC \"mountain range\")\n\t(SYNONYM MOUNTAIN RANGE)\n\t(ADJECTIVE IMPASSABLE FLATHEAD)\n\t(FLAGS NDESCBIT CLIMBBIT)\n\t(ACTION MOUNTAIN-RANGE-F)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GLOBAL-WATER": {
+      "id": "GLOBAL-WATER",
+      "desc": "water",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM WATER QUANTITY)\n\t(DESC \"water\")\n\t(FLAGS DRINKBIT)\n\t(ACTION WATER-F)",
+      "raw_loc": null,
+      "flags": [
+        "DRINKBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "WATER": {
+      "id": "WATER",
+      "desc": "quantity of water",
+      "raw_body": "(IN BOTTLE)\n\t(SYNONYM WATER QUANTITY LIQUID H2O)\n\t(DESC \"quantity of water\")\n\t(FLAGS TRYTAKEBIT TAKEBIT DRINKBIT)\n\t(ACTION WATER-F)\n\t(SIZE 4)",
+      "raw_loc": null,
+      "flags": [
+        "DRINKBIT",
+        "TAKEBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "KITCHEN-WINDOW": {
+      "id": "KITCHEN-WINDOW",
+      "desc": "kitchen window",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM WINDOW)\n\t(ADJECTIVE KITCHEN SMALL)\n\t(DESC \"kitchen window\")\n\t(FLAGS DOORBIT NDESCBIT)\n\t(ACTION KITCHEN-WINDOW-F)",
+      "raw_loc": null,
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CHIMNEY": {
+      "id": "CHIMNEY",
+      "desc": "chimney",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM CHIMNEY)\n\t(ADJECTIVE DARK NARROW)\n\t(DESC \"chimney\")\n\t(ACTION CHIMNEY-F)\n\t(FLAGS CLIMBBIT NDESCBIT)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GHOSTS": {
+      "id": "GHOSTS",
+      "desc": "number of ghosts",
+      "raw_body": "(IN ENTRANCE-TO-HADES)\n\t(SYNONYM GHOSTS SPIRITS FIENDS FORCE)\n\t(ADJECTIVE INVISIBLE EVIL)\n\t(DESC \"number of ghosts\")\n\t(FLAGS ACTORBIT NDESCBIT)\n\t(ACTION GHOSTS-F)",
+      "raw_loc": null,
+      "flags": [
+        "ACTORBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": true
+    },
+    "SKULL": {
+      "id": "SKULL",
+      "desc": "crystal skull",
+      "raw_body": "(IN LAND-OF-LIVING-DEAD)\n\t(SYNONYM SKULL HEAD TREASURE)\n\t(ADJECTIVE CRYSTAL)\n\t(DESC \"crystal skull\")\n\t(FDESC\n\"Lying in one corner of the room is a beautifully carved crystal skull.\nIt appears to be grinning at you rather nastily.\")\n\t(FLAGS TAKEBIT)\n\t(VALUE 10)\n\t(TVALUE 10)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LOWERED-BASKET": {
+      "id": "LOWERED-BASKET",
+      "desc": "From the chain is suspended a basket.",
+      "raw_body": "(IN LOWER-SHAFT)\n\t(SYNONYM CAGE DUMBWAITER BASKET)\n\t(ADJECTIVE LOWERED)\n\t(LDESC \"From the chain is suspended a basket.\")\n\t(DESC \"basket\")\n\t(FLAGS TRYTAKEBIT)\n\t(ACTION BASKET-F)",
+      "raw_loc": null,
+      "flags": [
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RAISED-BASKET": {
+      "id": "RAISED-BASKET",
+      "desc": "basket",
+      "raw_body": "(IN SHAFT-ROOM)\n\t(SYNONYM CAGE DUMBWAITER BASKET)\n\t(DESC \"basket\")\n\t(FLAGS TRANSBIT TRYTAKEBIT CONTBIT OPENBIT)\n\t(ACTION BASKET-F)\n\t(LDESC \"At the end of the chain is a basket.\")\n\t(CAPACITY 50)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "OPENBIT",
+        "TRANSBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LUNCH": {
+      "id": "LUNCH",
+      "desc": "lunch",
+      "raw_body": "(IN SANDWICH-BAG)\n\t(SYNONYM FOOD SANDWICH LUNCH DINNER)\n\t(ADJECTIVE HOT PEPPER)\n\t(DESC \"lunch\")\n\t(FLAGS TAKEBIT FOODBIT)\n\t(LDESC \"A hot pepper sandwich is here.\")",
+      "raw_loc": null,
+      "flags": [
+        "FOODBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BAT": {
+      "id": "BAT",
+      "desc": "bat",
+      "raw_body": "(IN BAT-ROOM)\n\t(SYNONYM BAT VAMPIRE)\n\t(ADJECTIVE VAMPIRE DERANGED)\n\t(DESC \"bat\")\n\t(FLAGS ACTORBIT TRYTAKEBIT)\n\t(DESCFCN BAT-D)\n\t(ACTION BAT-F)",
+      "raw_loc": null,
+      "flags": [
+        "ACTORBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": true
+    },
+    "BELL": {
+      "id": "BELL",
+      "desc": "brass bell",
+      "raw_body": "(IN NORTH-TEMPLE)\n\t(SYNONYM BELL)\n\t(ADJECTIVE SMALL BRASS)\n\t(DESC \"brass bell\")\n\t(FLAGS TAKEBIT)\n\t(ACTION BELL-F)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "HOT-BELL": {
+      "id": "HOT-BELL",
+      "desc": "red hot brass bell",
+      "raw_body": "(SYNONYM BELL)\n\t(ADJECTIVE BRASS HOT RED SMALL)\n\t(DESC \"red hot brass bell\")\n\t(FLAGS TRYTAKEBIT)\n\t(ACTION HOT-BELL-F)\n\t(LDESC \"On the ground is a red hot bell.\")",
+      "raw_loc": null,
+      "flags": [
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "AXE": {
+      "id": "AXE",
+      "desc": "bloody axe",
+      "raw_body": "(IN TROLL)\n\t(SYNONYM AXE AX)\n\t(ADJECTIVE BLOODY)\n\t(DESC \"bloody axe\")\n\t(FLAGS WEAPONBIT TRYTAKEBIT TAKEBIT NDESCBIT)\n\t(ACTION AXE-F)\n\t(SIZE 25)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TAKEBIT",
+        "TRYTAKEBIT",
+        "WEAPONBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BOLT": {
+      "id": "BOLT",
+      "desc": "bolt",
+      "raw_body": "(IN DAM-ROOM)\n\t(SYNONYM BOLT NUT)\n\t(ADJECTIVE METAL LARGE)\n\t(DESC \"bolt\")\n\t(FLAGS NDESCBIT TURNBIT TRYTAKEBIT)\n\t(ACTION BOLT-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT",
+        "TURNBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BUBBLE": {
+      "id": "BUBBLE",
+      "desc": "green bubble",
+      "raw_body": "(IN DAM-ROOM)\n\t(SYNONYM BUBBLE)\n\t(ADJECTIVE SMALL GREEN PLASTIC)\n\t(DESC \"green bubble\")\n\t(FLAGS NDESCBIT TRYTAKEBIT)\n\t(ACTION BUBBLE-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "ALTAR": {
+      "id": "ALTAR",
+      "desc": "altar",
+      "raw_body": "(IN SOUTH-TEMPLE)\n\t(SYNONYM ALTAR)\n\t(DESC \"altar\")\n\t(FLAGS NDESCBIT SURFACEBIT CONTBIT OPENBIT)\n\t(CAPACITY 50)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BOOK": {
+      "id": "BOOK",
+      "desc": "black book",
+      "raw_body": "(IN ALTAR)\n\t(SYNONYM BOOK PRAYER PAGE BOOKS)\n\t(ADJECTIVE LARGE BLACK)\n\t(DESC \"black book\")\n\t(FLAGS READBIT TAKEBIT CONTBIT BURNBIT TURNBIT)\n\t(ACTION BLACK-BOOK)\n\t(FDESC \"On the altar is a large black book, open to page 569.\")\n\t(SIZE 10)\n\t(TEXT\n\"Commandment #12592|\n|\nOh ye who go about saying unto each:  \\\"Hello sailor\\\":|\nDost thou know the magnitude of thy sin before the gods?|\nYea, verily, thou shalt be ground between two stones.|\nShall the angry gods cast thy body into the whirlpool?|\nSurely, thy eye shall be put out with a sharp stick!|\nEven unto the ends of the earth shalt thou wander and|\nUnto the land of the dead shalt thou be sent at last.|\nSurely thou shalt repent of thy cunning.\" )",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT",
+        "TURNBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BROKEN-LAMP": {
+      "id": "BROKEN-LAMP",
+      "desc": "broken lantern",
+      "raw_body": "(SYNONYM LAMP LANTERN)\n\t(ADJECTIVE BROKEN)\n\t(DESC \"broken lantern\")\n\t(FLAGS TAKEBIT)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SCEPTRE": {
+      "id": "SCEPTRE",
+      "desc": "sceptre",
+      "raw_body": "(IN COFFIN)\n\t(SYNONYM SCEPTRE SCEPTER TREASURE)\n\t(ADJECTIVE SHARP EGYPTIAN ANCIENT ENAMELED)\n\t(DESC \"sceptre\")\n\t(FLAGS TAKEBIT WEAPONBIT)\n\t(ACTION SCEPTRE-FUNCTION)\n\t(LDESC\n\"An ornamented sceptre, tapering to a sharp point, is here.\")\n\t(FDESC\n\"A sceptre, possibly that of ancient Egypt itself, is in the coffin. The\nsceptre is ornamented with colored enamel, and tapers to a sharp point.\")\n\t(SIZE 3)\n\t(VALUE 4)\n\t(TVALUE 6)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "WEAPONBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TIMBERS": {
+      "id": "TIMBERS",
+      "desc": "broken timber",
+      "raw_body": "(IN TIMBER-ROOM)\n\t(SYNONYM TIMBERS PILE)\n\t(ADJECTIVE WOODEN BROKEN)\n\t(DESC \"broken timber\")\n\t(FLAGS TAKEBIT)\n\t(SIZE 50)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SLIDE": {
+      "id": "SLIDE",
+      "desc": "chute",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM CHUTE RAMP SLIDE)\n\t(ADJECTIVE STEEP METAL TWISTING)\n\t(DESC \"chute\")\n\t(FLAGS CLIMBBIT)\n\t(ACTION SLIDE-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "KITCHEN-TABLE": {
+      "id": "KITCHEN-TABLE",
+      "desc": "kitchen table",
+      "raw_body": "(IN KITCHEN)\n\t(SYNONYM TABLE)\n\t(ADJECTIVE KITCHEN)\n\t(DESC \"kitchen table\")\n\t(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT)\n\t(CAPACITY 50)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "ATTIC-TABLE": {
+      "id": "ATTIC-TABLE",
+      "desc": "table",
+      "raw_body": "(IN ATTIC)\n\t(SYNONYM TABLE)\n\t(DESC \"table\")\n\t(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT)\n\t(CAPACITY 40)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SANDWICH-BAG": {
+      "id": "SANDWICH-BAG",
+      "desc": "brown sack",
+      "raw_body": "(IN KITCHEN-TABLE)\n\t(SYNONYM BAG SACK)\n\t(ADJECTIVE BROWN ELONGATED SMELLY)\n\t(DESC \"brown sack\")\n\t(FLAGS TAKEBIT CONTBIT BURNBIT)\n\t(FDESC\n\"On the table is an elongated brown sack, smelling of hot peppers.\")\n\t(CAPACITY 9)\n\t(SIZE 9)\n\t(ACTION SANDWICH-BAG-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TOOL-CHEST": {
+      "id": "TOOL-CHEST",
+      "desc": "group of tool chests",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM CHEST CHESTS GROUP TOOLCHESTS)\n\t(ADJECTIVE TOOL)\n\t(DESC \"group of tool chests\")\n\t(FLAGS CONTBIT OPENBIT TRYTAKEBIT SACREDBIT)\n\t(ACTION TOOL-CHEST-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "OPENBIT",
+        "SACREDBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "YELLOW-BUTTON": {
+      "id": "YELLOW-BUTTON",
+      "desc": "yellow button",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM BUTTON SWITCH)\n\t(ADJECTIVE YELLOW)\n\t(DESC \"yellow button\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BUTTON-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BROWN-BUTTON": {
+      "id": "BROWN-BUTTON",
+      "desc": "brown button",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM BUTTON SWITCH)\n\t(ADJECTIVE BROWN)\n\t(DESC \"brown button\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BUTTON-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RED-BUTTON": {
+      "id": "RED-BUTTON",
+      "desc": "red button",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM BUTTON SWITCH)\n\t(ADJECTIVE RED)\n\t(DESC \"red button\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BUTTON-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BLUE-BUTTON": {
+      "id": "BLUE-BUTTON",
+      "desc": "blue button",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM BUTTON SWITCH)\n\t(ADJECTIVE BLUE)\n\t(DESC \"blue button\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BUTTON-F)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TROPHY-CASE": {
+      "id": "TROPHY-CASE",
+      "desc": "first obj so L.R. desc looks right.",
+      "raw_body": ";\"first obj so L.R. desc looks right.\"\n\t(IN LIVING-ROOM)\n\t(SYNONYM CASE)\n\t(ADJECTIVE TROPHY)\n\t(DESC \"trophy case\")\n\t(FLAGS TRANSBIT CONTBIT NDESCBIT TRYTAKEBIT SEARCHBIT)\n\t(ACTION TROPHY-CASE-FCN)\n\t(CAPACITY 10000)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "SEARCHBIT",
+        "TRANSBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RUG": {
+      "id": "RUG",
+      "desc": "carpet",
+      "raw_body": "(IN LIVING-ROOM)\n\t(SYNONYM RUG CARPET)\n\t(ADJECTIVE LARGE ORIENTAL)\n\t(DESC \"carpet\")\n\t(FLAGS NDESCBIT TRYTAKEBIT)\n\t(ACTION RUG-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CHALICE": {
+      "id": "CHALICE",
+      "desc": "engravings exists...",
+      "raw_body": "(IN TREASURE-ROOM)\n\t(SYNONYM CHALICE CUP SILVER TREASURE)\n\t(ADJECTIVE SILVER ENGRAVINGS) ;\"engravings exists...\"\n\t(DESC \"chalice\")\n\t(FLAGS TAKEBIT TRYTAKEBIT CONTBIT)\n\t(ACTION CHALICE-FCN)\n\t(LDESC \"There is a silver chalice, intricately engraved, here.\")\n\t(CAPACITY 5)\n\t(SIZE 10)\n\t(VALUE 10)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "TAKEBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GARLIC": {
+      "id": "GARLIC",
+      "desc": "clove of garlic",
+      "raw_body": "(IN SANDWICH-BAG)\n\t(SYNONYM GARLIC CLOVE)\n\t(DESC \"clove of garlic\")\n\t(FLAGS TAKEBIT FOODBIT)\n\t(ACTION GARLIC-F)\n\t(SIZE 4)",
+      "raw_loc": null,
+      "flags": [
+        "FOODBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TRIDENT": {
+      "id": "TRIDENT",
+      "desc": "crystal trident",
+      "raw_body": "(IN ATLANTIS-ROOM)\n\t(SYNONYM TRIDENT FORK TREASURE)\n\t(ADJECTIVE POSEIDON OWN CRYSTAL)\n\t(DESC \"crystal trident\")\n\t(FLAGS TAKEBIT)\n\t(FDESC \"On the shore lies Poseidon's own crystal trident.\")\n\t(SIZE 20)\n\t(VALUE 4)\n\t(TVALUE 11)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CYCLOPS": {
+      "id": "CYCLOPS",
+      "desc": "cyclops",
+      "raw_body": "(IN CYCLOPS-ROOM)\n\t(SYNONYM CYCLOPS MONSTER EYE)\n\t(ADJECTIVE HUNGRY GIANT)\n\t(DESC \"cyclops\")\n\t(FLAGS ACTORBIT NDESCBIT TRYTAKEBIT)\n\t(ACTION CYCLOPS-FCN)\n\t(STRENGTH 10000)",
+      "raw_loc": null,
+      "flags": [
+        "ACTORBIT",
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": true
+    },
+    "DAM": {
+      "id": "DAM",
+      "desc": "dam",
+      "raw_body": "(IN DAM-ROOM)\n\t(SYNONYM DAM GATE GATES FCD\\#3)\n\t(DESC \"dam\")\n\t(FLAGS NDESCBIT TRYTAKEBIT)\n\t(ACTION DAM-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TRAP-DOOR": {
+      "id": "TRAP-DOOR",
+      "desc": "trap door",
+      "raw_body": "(IN LIVING-ROOM)\n\t(SYNONYM DOOR TRAPDOOR TRAP-DOOR COVER)\n\t(ADJECTIVE TRAP DUSTY)\n\t(DESC \"trap door\")\n\t(FLAGS DOORBIT NDESCBIT INVISIBLE)\n\t(ACTION TRAP-DOOR-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "DOORBIT",
+        "INVISIBLE",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BOARDED-WINDOW": {
+      "id": "BOARDED-WINDOW",
+      "desc": "boarded window",
+      "raw_body": "(IN LOCAL-GLOBALS)\n        (SYNONYM WINDOW)\n\t(ADJECTIVE BOARDED)\n\t(DESC \"boarded window\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BOARDED-WINDOW-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "FRONT-DOOR": {
+      "id": "FRONT-DOOR",
+      "desc": "door",
+      "raw_body": "(IN WEST-OF-HOUSE)\n\t(SYNONYM DOOR)\n\t(ADJECTIVE FRONT BOARDED)\n\t(DESC \"door\")\n\t(FLAGS DOORBIT NDESCBIT)\n\t(ACTION FRONT-DOOR-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BARROW-DOOR": {
+      "id": "BARROW-DOOR",
+      "desc": "stone door",
+      "raw_body": "(IN STONE-BARROW)\n\t(SYNONYM DOOR)\n\t(ADJECTIVE HUGE STONE)\n\t(DESC \"stone door\")\n\t(FLAGS DOORBIT NDESCBIT OPENBIT)\n\t(ACTION BARROW-DOOR-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT",
+        "OPENBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BARROW": {
+      "id": "BARROW",
+      "desc": "stone barrow",
+      "raw_body": "(IN STONE-BARROW)\n\t(SYNONYM BARROW TOMB)\n\t(ADJECTIVE MASSIVE STONE)\n\t(DESC \"stone barrow\")\n\t(FLAGS NDESCBIT)\n\t(ACTION BARROW-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BOTTLE": {
+      "id": "BOTTLE",
+      "desc": "glass bottle",
+      "raw_body": "(IN KITCHEN-TABLE)\n\t(SYNONYM BOTTLE CONTAINER)\n\t(ADJECTIVE CLEAR GLASS)\n\t(DESC \"glass bottle\")\n\t(FLAGS TAKEBIT TRANSBIT CONTBIT)\n\t(ACTION BOTTLE-FUNCTION)\n\t(FDESC \"A bottle is sitting on the table.\")\n\t(CAPACITY 4)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "TAKEBIT",
+        "TRANSBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CRACK": {
+      "id": "CRACK",
+      "desc": "crack",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM CRACK)\n\t(ADJECTIVE NARROW)\n\t(DESC \"crack\")\n\t(FLAGS NDESCBIT)\n\t(ACTION CRACK-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "COFFIN": {
+      "id": "COFFIN",
+      "desc": "gold coffin",
+      "raw_body": "(IN EGYPT-ROOM)\n\t(SYNONYM COFFIN CASKET TREASURE)\n\t(ADJECTIVE SOLID GOLD)\n\t(DESC \"gold coffin\")\n\t(FLAGS TAKEBIT CONTBIT SACREDBIT SEARCHBIT)\n\t(LDESC\n\"The solid-gold coffin used for the burial of Ramses II is here.\")\n\t(CAPACITY 35)\n\t(SIZE 55)\n\t(VALUE 10)\n\t(TVALUE 15)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "SACREDBIT",
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GRATE": {
+      "id": "GRATE",
+      "desc": "grating",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM GRATE GRATING)\n\t(DESC \"grating\")\n\t(FLAGS DOORBIT NDESCBIT INVISIBLE)\n\t(ACTION GRATE-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "DOORBIT",
+        "INVISIBLE",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "PUMP": {
+      "id": "PUMP",
+      "desc": "hand-held air pump",
+      "raw_body": "(IN RESERVOIR-NORTH)\n\t(SYNONYM PUMP AIR-PUMP TOOL TOOLS)\n\t(ADJECTIVE SMALL HAND-HELD)\n\t(DESC \"hand-held air pump\")\n\t(FLAGS TAKEBIT TOOLBIT)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "DIAMOND": {
+      "id": "DIAMOND",
+      "desc": "huge diamond",
+      "raw_body": "(SYNONYM DIAMOND TREASURE)\n\t(ADJECTIVE HUGE ENORMOUS)\n\t(DESC \"huge diamond\")\n\t(FLAGS TAKEBIT)\n\t(LDESC \"There is an enormous diamond (perfectly cut) here.\")\n\t(VALUE 10)\n\t(TVALUE 10)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "JADE": {
+      "id": "JADE",
+      "desc": "jade figurine",
+      "raw_body": "(IN BAT-ROOM)\n\t(SYNONYM FIGURINE TREASURE)\n\t(ADJECTIVE EXQUISITE JADE)\n\t(DESC \"jade figurine\")\n\t(FLAGS TAKEBIT)\n\t(LDESC \"There is an exquisite jade figurine here.\")\n\t(SIZE 10)\n\t(VALUE 5)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "KNIFE": {
+      "id": "KNIFE",
+      "desc": "nasty knife",
+      "raw_body": "(IN ATTIC-TABLE)\n\t(SYNONYM KNIVES KNIFE BLADE)\n\t(ADJECTIVE NASTY UNRUSTY)\n\t(DESC \"nasty knife\")\n\t(FLAGS TAKEBIT WEAPONBIT TRYTAKEBIT)\n\t(FDESC \"On a table is a nasty-looking knife.\")\n\t(ACTION KNIFE-F)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TRYTAKEBIT",
+        "WEAPONBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BONES": {
+      "id": "BONES",
+      "desc": "skeleton",
+      "raw_body": "(IN MAZE-5)\n\t(SYNONYM BONES SKELETON BODY)\n\t(DESC \"skeleton\")\n\t(FLAGS TRYTAKEBIT NDESCBIT)\n\t(ACTION SKELETON)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BURNED-OUT-LANTERN": {
+      "id": "BURNED-OUT-LANTERN",
+      "desc": "burned-out lantern",
+      "raw_body": "(IN MAZE-5)\n\t(SYNONYM LANTERN LAMP)\n\t(ADJECTIVE RUSTY BURNED DEAD USELESS)\n\t(DESC \"burned-out lantern\")\n\t(FLAGS TAKEBIT)\n\t(FDESC \"The deceased adventurer's useless lantern is here.\")\n\t(SIZE 20)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BAG-OF-COINS": {
+      "id": "BAG-OF-COINS",
+      "desc": "leather bag of coins",
+      "raw_body": "(IN MAZE-5)\n\t(SYNONYM BAG COINS TREASURE)\n\t(ADJECTIVE OLD LEATHER)\n\t(DESC \"leather bag of coins\")\n\t(FLAGS TAKEBIT)\n\t(LDESC \"An old leather bag, bulging with coins, is here.\")\n\t(ACTION BAG-OF-COINS-F)\n\t(SIZE 15)\n\t(VALUE 10)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LAMP": {
+      "id": "LAMP",
+      "desc": "brass lantern",
+      "raw_body": "(IN LIVING-ROOM)\n\t(SYNONYM LAMP LANTERN LIGHT)\n\t(ADJECTIVE BRASS)\n\t(DESC \"brass lantern\")\n\t(FLAGS TAKEBIT LIGHTBIT)\n\t(ACTION LANTERN)\n\t(FDESC \"A battery-powered brass lantern is on the trophy case.\")\n\t(LDESC \"There is a brass lantern (battery-powered) here.\")\n\t(SIZE 15)",
+      "raw_loc": null,
+      "flags": [
+        "LIGHTBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "EMERALD": {
+      "id": "EMERALD",
+      "desc": "large emerald",
+      "raw_body": "(IN BUOY)\n\t(SYNONYM EMERALD TREASURE)\n\t(ADJECTIVE LARGE)\n\t(DESC \"large emerald\")\n\t(FLAGS TAKEBIT)\n\t(VALUE 5)\n\t(TVALUE 10)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "ADVERTISEMENT": {
+      "id": "ADVERTISEMENT",
+      "desc": "leaflet",
+      "raw_body": "(IN MAILBOX)\n\t(SYNONYM ADVERTISEMENT LEAFLET BOOKLET MAIL)\n\t(ADJECTIVE SMALL)\n\t(DESC \"leaflet\")\n\t(FLAGS READBIT TAKEBIT BURNBIT)\n\t(LDESC \"A small leaflet is on the ground.\")\n\t(TEXT\n\"\\\"WELCOME TO ZORK!|\n|\nZORK is a game of adventure, danger, and low cunning. In it you\nwill explore some of the most amazing territory ever seen by mortals.\nNo computer should be without one!\\\"\")\n\t(SIZE 2)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LEAK": {
+      "id": "LEAK",
+      "desc": "leak",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM LEAK DRIP PIPE)\n\t(DESC \"leak\")\n\t(FLAGS NDESCBIT INVISIBLE)\n\t(ACTION LEAK-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "INVISIBLE",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MACHINE": {
+      "id": "MACHINE",
+      "desc": "machine",
+      "raw_body": "(IN MACHINE-ROOM)\n\t(SYNONYM MACHINE PDP10 DRYER LID)\n\t(DESC \"machine\")\n\t(FLAGS CONTBIT NDESCBIT TRYTAKEBIT)\n\t(ACTION MACHINE-F)\n\t(CAPACITY 50)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "INFLATED-BOAT": {
+      "id": "INFLATED-BOAT",
+      "desc": "magic boat",
+      "raw_body": "(SYNONYM BOAT RAFT)\n\t(ADJECTIVE INFLAT MAGIC PLASTIC SEAWORTHY)\n\t(DESC \"magic boat\")\n\t(FLAGS TAKEBIT BURNBIT VEHBIT OPENBIT SEARCHBIT)\n\t(ACTION RBOAT-FUNCTION)\n\t(CAPACITY 100)\n\t(SIZE 20)\n\t(VTYPE NONLANDBIT)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "OPENBIT",
+        "SEARCHBIT",
+        "TAKEBIT",
+        "VEHBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MAILBOX": {
+      "id": "MAILBOX",
+      "desc": "small mailbox",
+      "raw_body": "(IN WEST-OF-HOUSE)\n\t(SYNONYM MAILBOX BOX)\n\t(ADJECTIVE SMALL)\n\t(DESC \"small mailbox\")\n\t(FLAGS CONTBIT TRYTAKEBIT)\n\t(CAPACITY 10)\n\t(ACTION MAILBOX-F)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MATCH": {
+      "id": "MATCH",
+      "desc": "matchbook",
+      "raw_body": "(IN DAM-LOBBY)\n\t(SYNONYM MATCH MATCHES MATCHBOOK)\n\t(ADJECTIVE MATCH)\n\t(DESC \"matchbook\")\n\t(FLAGS READBIT TAKEBIT)\n\t(ACTION MATCH-FUNCTION)\n\t(LDESC\n\"There is a matchbook whose cover says \\\"Visit Beautiful FCD#3\\\" here.\")\n\t(SIZE 2)\n\t(TEXT\n\"|\n(Close cover before striking)|\n|\nYOU too can make BIG MONEY in the exciting field of PAPER SHUFFLING!|\n|\nMr. Anderson of Muddle, Mass. says: \\\"Before I took this course I\nwas a lowly bit twiddler. Now with what I learned at GUE Tech\nI feel really important and can obfuscate and confuse with the best.\\\"|\n|\nDr. Blank had this to say: \\\"Ten short days ago all I could look\nforward to was a dead-end job as a doctor. Now I have a promising\nfuture and make really big Zorkmids.\\\"|\n|\nGUE Tech can't promise these fantastic results to everyone. But when\nyou earn your degree from GUE Tech, your future will be brighter.\" )",
+      "raw_loc": null,
+      "flags": [
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MIRROR-2": {
+      "id": "MIRROR-2",
+      "desc": "mirror",
+      "raw_body": "(IN MIRROR-ROOM-2)\n\t(SYNONYM REFLECTION MIRROR ENORMOUS)\n\t(DESC \"mirror\")\n\t(FLAGS TRYTAKEBIT NDESCBIT)\n\t(ACTION MIRROR-MIRROR)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MIRROR-1": {
+      "id": "MIRROR-1",
+      "desc": "mirror",
+      "raw_body": "(IN MIRROR-ROOM-1)\n\t(SYNONYM REFLECTION MIRROR ENORMOUS)\n\t(DESC \"mirror\")\n\t(FLAGS TRYTAKEBIT NDESCBIT)\n\t(ACTION MIRROR-MIRROR)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "PAINTING": {
+      "id": "PAINTING",
+      "desc": "painting",
+      "raw_body": "(IN GALLERY)\n\t(SYNONYM PAINTING ART CANVAS TREASURE)\n\t(ADJECTIVE BEAUTI)\n\t(DESC \"painting\")\n\t(FLAGS TAKEBIT BURNBIT)\n\t(ACTION PAINTING-FCN)\n\t(FDESC\n\"Fortunately, there is still one chance for you to be a vandal, for on\nthe far wall is a painting of unparalleled beauty.\")\n\t(LDESC \"A painting by a neglected genius is here.\")\n\t(SIZE 15)\n\t(VALUE 4)\n\t(TVALUE 6)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CANDLES": {
+      "id": "CANDLES",
+      "desc": "pair of candles",
+      "raw_body": "(IN SOUTH-TEMPLE)\n\t(SYNONYM CANDLES PAIR)\n\t(ADJECTIVE BURNING)\n\t(DESC \"pair of candles\")\n\t(FLAGS TAKEBIT FLAMEBIT ONBIT LIGHTBIT)\n\t(ACTION CANDLES-FCN)\n\t(FDESC \"On the two ends of the altar are burning candles.\")\n\t(SIZE 10)",
+      "raw_loc": null,
+      "flags": [
+        "FLAMEBIT",
+        "LIGHTBIT",
+        "ONBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GUNK": {
+      "id": "GUNK",
+      "desc": "small piece of vitreous slag",
+      "raw_body": "(SYNONYM GUNK PIECE SLAG)\n\t(ADJECTIVE SMALL VITREOUS)\n\t(DESC \"small piece of vitreous slag\")\n\t(FLAGS TAKEBIT TRYTAKEBIT)\n\t(ACTION GUNK-FUNCTION)\n\t(SIZE 10)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BODIES": {
+      "id": "BODIES",
+      "desc": "pile of bodies",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM BODIES BODY REMAINS PILE)\n\t(ADJECTIVE MANGLED)\n\t(DESC \"pile of bodies\")\n\t(FLAGS NDESCBIT TRYTAKEBIT)\n\t(ACTION BODY-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LEAVES": {
+      "id": "LEAVES",
+      "desc": "pile of leaves",
+      "raw_body": "(IN GRATING-CLEARING)\n\t(SYNONYM LEAVES LEAF PILE)\n\t(DESC \"pile of leaves\")\n\t(FLAGS TAKEBIT BURNBIT TRYTAKEBIT)\n\t(ACTION LEAF-PILE)\n\t(LDESC \"On the ground is a pile of leaves.\")\n\t(SIZE 25)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "TAKEBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "PUNCTURED-BOAT": {
+      "id": "PUNCTURED-BOAT",
+      "desc": "punctured boat",
+      "raw_body": "(SYNONYM BOAT PILE PLASTIC)\n\t(ADJECTIVE PLASTIC PUNCTURE LARGE)\n\t(DESC \"punctured boat\")\n\t(FLAGS TAKEBIT BURNBIT)\n\t(ACTION DBOAT-FUNCTION)\n\t(SIZE 20)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "INFLATABLE-BOAT": {
+      "id": "INFLATABLE-BOAT",
+      "desc": "pile of plastic",
+      "raw_body": "(IN DAM-BASE)\n\t(SYNONYM BOAT PILE PLASTIC VALVE)\n\t(ADJECTIVE PLASTIC INFLAT)\n\t(DESC \"pile of plastic\")\n\t(FLAGS TAKEBIT BURNBIT)\n\t(ACTION IBOAT-FUNCTION)\n\t(LDESC\n\"There is a folded pile of plastic here which has a small valve\nattached.\")\n\t(SIZE 20)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BAR": {
+      "id": "BAR",
+      "desc": "platinum bar",
+      "raw_body": "(IN LOUD-ROOM)\n\t(SYNONYM BAR PLATINUM TREASURE)\n\t(ADJECTIVE PLATINUM LARGE)\n\t(DESC \"platinum bar\")\n\t(FLAGS TAKEBIT SACREDBIT)\n\t(LDESC \"On the ground is a large platinum bar.\")\n\t(SIZE 20)\n\t(VALUE 10)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "SACREDBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "POT-OF-GOLD": {
+      "id": "POT-OF-GOLD",
+      "desc": "pot of gold",
+      "raw_body": "(IN END-OF-RAINBOW)\n\t(SYNONYM POT GOLD TREASURE)\n\t(ADJECTIVE GOLD)\n\t(DESC \"pot of gold\")\n\t(FLAGS TAKEBIT INVISIBLE)\n\t(FDESC \"At the end of the rainbow is a pot of gold.\")\n\t(SIZE 15)\n\t(VALUE 10)\n\t(TVALUE 10)",
+      "raw_loc": null,
+      "flags": [
+        "INVISIBLE",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "PRAYER": {
+      "id": "PRAYER",
+      "desc": "prayer",
+      "raw_body": "(IN NORTH-TEMPLE)\n\t(SYNONYM PRAYER INSCRIPTION)\n\t(ADJECTIVE ANCIENT OLD)\n\t(DESC \"prayer\")\n\t(FLAGS READBIT SACREDBIT NDESCBIT)\n\t(TEXT\n\"The prayer is inscribed in an ancient script, rarely used today. It seems\nto be a philippic against small insects, absent-mindedness, and the picking\nup and dropping of small objects. The final verse consigns trespassers to\nthe land of the dead. All evidence indicates that the beliefs of the ancient\nZorkers were obscure.\" )",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "READBIT",
+        "SACREDBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RAILING": {
+      "id": "RAILING",
+      "desc": "wooden railing",
+      "raw_body": "(IN DOME-ROOM)\n\t(SYNONYM RAILING RAIL)\n\t(ADJECTIVE WOODEN)\n\t(DESC \"wooden railing\")\n\t(FLAGS NDESCBIT)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RAINBOW": {
+      "id": "RAINBOW",
+      "desc": "rainbow",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM RAINBOW)\n\t(DESC \"rainbow\")\n\t(FLAGS NDESCBIT CLIMBBIT)\n\t(ACTION RAINBOW-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RIVER": {
+      "id": "RIVER",
+      "desc": "river",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(DESC \"river\")\n\t(SYNONYM RIVER)\n\t(ADJECTIVE FRIGID)\n\t(ACTION RIVER-FUNCTION)\n\t(FLAGS NDESCBIT)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BUOY": {
+      "id": "BUOY",
+      "desc": "red buoy",
+      "raw_body": "(IN RIVER-4)\n\t(SYNONYM BUOY)\n\t(ADJECTIVE RED)\n\t(DESC \"red buoy\")\n\t(FLAGS TAKEBIT CONTBIT)\n\t(FDESC \"There is a red buoy here (probably a warning).\")\n\t(CAPACITY 20)\n\t(SIZE 10)\n\t(ACTION TREASURE-INSIDE)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "ROPE": {
+      "id": "ROPE",
+      "desc": "rope",
+      "raw_body": "(IN ATTIC)\n\t(SYNONYM ROPE HEMP COIL)\n\t(ADJECTIVE LARGE)\n\t(DESC \"rope\")\n\t(FLAGS TAKEBIT SACREDBIT TRYTAKEBIT)\n\t(ACTION ROPE-FUNCTION)\n\t(FDESC \"A large coil of rope is lying in the corner.\")\n\t(SIZE 10)",
+      "raw_loc": null,
+      "flags": [
+        "SACREDBIT",
+        "TAKEBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "RUSTY-KNIFE": {
+      "id": "RUSTY-KNIFE",
+      "desc": "rusty knife",
+      "raw_body": "(IN MAZE-5)\n\t(SYNONYM KNIVES KNIFE)\n\t(ADJECTIVE RUSTY)\n\t(DESC \"rusty knife\")\n\t(FLAGS TAKEBIT TRYTAKEBIT WEAPONBIT TOOLBIT)\n\t(ACTION RUSTY-KNIFE-FCN)\n\t(FDESC \"Beside the skeleton is a rusty knife.\")\n\t(SIZE 20)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT",
+        "TRYTAKEBIT",
+        "WEAPONBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SAND": {
+      "id": "SAND",
+      "desc": "sand",
+      "raw_body": "(IN SANDY-CAVE)\n\t(SYNONYM SAND)\n\t(DESC \"sand\")\n\t(FLAGS NDESCBIT)\n\t(ACTION SAND-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BRACELET": {
+      "id": "BRACELET",
+      "desc": "sapphire-encrusted bracelet",
+      "raw_body": "(IN GAS-ROOM)\n\t(SYNONYM BRACELET JEWEL SAPPHIRE TREASURE)\n\t(ADJECTIVE SAPPHIRE)\n\t(DESC \"sapphire-encrusted bracelet\")\n\t(FLAGS TAKEBIT)\n\t(SIZE 10)\n\t(VALUE 5)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SCREWDRIVER": {
+      "id": "SCREWDRIVER",
+      "desc": "screwdriver",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM SCREWDRIVER TOOL TOOLS DRIVER)\n\t(ADJECTIVE SCREW)\n\t(DESC \"screwdriver\")\n\t(FLAGS TAKEBIT TOOLBIT)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "KEYS": {
+      "id": "KEYS",
+      "desc": "skeleton key",
+      "raw_body": "(IN MAZE-5)\n\t(SYNONYM KEY)\n\t(ADJECTIVE SKELETON)\n\t(DESC \"skeleton key\")\n\t(FLAGS TAKEBIT TOOLBIT)\n\t(SIZE 10)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SHOVEL": {
+      "id": "SHOVEL",
+      "desc": "shovel",
+      "raw_body": "(IN SANDY-BEACH)\n\t(SYNONYM SHOVEL TOOL TOOLS)\n\t(DESC \"shovel\")\n\t(FLAGS TAKEBIT TOOLBIT)\n\t(SIZE 15)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "COAL": {
+      "id": "COAL",
+      "desc": "small pile of coal",
+      "raw_body": "(IN DEAD-END-5)\n\t(SYNONYM COAL PILE HEAP)\n\t(ADJECTIVE SMALL)\n\t(DESC \"small pile of coal\")\n\t(FLAGS TAKEBIT BURNBIT)\n\t(SIZE 20)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LADDER": {
+      "id": "LADDER",
+      "desc": "wooden ladder",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM LADDER)\n\t(ADJECTIVE WOODEN RICKETY NARROW)\n\t(DESC \"wooden ladder\")\n\t(FLAGS NDESCBIT CLIMBBIT)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SCARAB": {
+      "id": "SCARAB",
+      "desc": "beautiful jeweled scarab",
+      "raw_body": "(IN SANDY-CAVE)\n\t(SYNONYM SCARAB BUG BEETLE TREASURE)\n\t(ADJECTIVE BEAUTI CARVED JEWELED)\n\t(DESC \"beautiful jeweled scarab\")\n\t(FLAGS TAKEBIT INVISIBLE)\n\t(SIZE 8)\n\t(VALUE 5)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "INVISIBLE",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "LARGE-BAG": {
+      "id": "LARGE-BAG",
+      "desc": "large bag",
+      "raw_body": "(IN THIEF)\n\t(SYNONYM BAG)\n\t(ADJECTIVE LARGE THIEFS)\n\t(DESC \"large bag\")\n\t(ACTION LARGE-BAG-F)\n\t(FLAGS TRYTAKEBIT NDESCBIT)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "STILETTO": {
+      "id": "STILETTO",
+      "desc": "stiletto",
+      "raw_body": "(IN THIEF)\n\t(SYNONYM STILETTO)\n\t(ADJECTIVE VICIOUS)\n\t(DESC \"stiletto\")\n\t(ACTION STILETTO-FUNCTION)\n\t(FLAGS WEAPONBIT TRYTAKEBIT TAKEBIT NDESCBIT)\n\t(SIZE 10)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TAKEBIT",
+        "TRYTAKEBIT",
+        "WEAPONBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MACHINE-SWITCH": {
+      "id": "MACHINE-SWITCH",
+      "desc": "switch",
+      "raw_body": "(IN MACHINE-ROOM)\n\t(SYNONYM SWITCH)\n\t(DESC \"switch\")\n\t(FLAGS NDESCBIT TURNBIT)\n\t(ACTION MSWITCH-FUNCTION)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT",
+        "TURNBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "WOODEN-DOOR": {
+      "id": "WOODEN-DOOR",
+      "desc": "wooden door",
+      "raw_body": "(IN LIVING-ROOM)\n\t(SYNONYM DOOR LETTERING WRITING)\n\t(ADJECTIVE WOODEN GOTHIC STRANGE WEST)\n\t(DESC \"wooden door\")\n\t(FLAGS READBIT DOORBIT NDESCBIT TRANSBIT)\n\t(ACTION FRONT-DOOR-FCN)\n\t(TEXT\n\"The engravings translate to \\\"This space intentionally left blank.\\\"\")",
+      "raw_loc": null,
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT",
+        "READBIT",
+        "TRANSBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "SWORD": {
+      "id": "SWORD",
+      "desc": "sword",
+      "raw_body": "(IN LIVING-ROOM)\n\t(SYNONYM SWORD ORCRIST GLAMDRING BLADE)\n\t(ADJECTIVE ELVISH OLD ANTIQUE)\n\t(DESC \"sword\")\n\t(FLAGS TAKEBIT WEAPONBIT TRYTAKEBIT)\n\t(ACTION SWORD-FCN)\n\t(FDESC\n\"Above the trophy case hangs an elvish sword of great antiquity.\")\n\t(SIZE 30)\n\t(TVALUE 0)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TRYTAKEBIT",
+        "WEAPONBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "MAP": {
+      "id": "MAP",
+      "desc": "ancient map",
+      "raw_body": "(IN TROPHY-CASE)\n\t(SYNONYM PARCHMENT MAP)\n\t(ADJECTIVE ANTIQUE OLD ANCIENT)\n\t(DESC \"ancient map\")\n\t(FLAGS INVISIBLE READBIT TAKEBIT)\n\t(FDESC\n\"In the trophy case is an ancient parchment which appears to be a map.\")\n\t(SIZE 2)\n\t(TEXT\n\"The map shows a forest with three clearings. The largest clearing contains\na house. Three paths leave the large clearing. One of these paths, leading\nsouthwest, is marked \\\"To Stone Barrow\\\".\")",
+      "raw_loc": null,
+      "flags": [
+        "INVISIBLE",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BOAT-LABEL": {
+      "id": "BOAT-LABEL",
+      "desc": "tan label",
+      "raw_body": "(IN INFLATED-BOAT)\n\t(SYNONYM LABEL FINEPRINT PRINT)\n\t(ADJECTIVE TAN FINE)\n\t(DESC \"tan label\")\n\t(FLAGS READBIT TAKEBIT BURNBIT)\n\t(SIZE 2)\n\t(TEXT\n\"  !!!!FROBOZZ MAGIC BOAT COMPANY!!!!|\n|\nHello, Sailor!|\n|\nInstructions for use:|\n|\n   To get into a body of water, say \\\"Launch\\\".|\n   To get to shore, say \\\"Land\\\" or the direction in which you want\nto maneuver the boat.|\n|\nWarranty:|\n|\n  This boat is guaranteed against all defects for a period of 76\nmilliseconds from date of purchase or until first used, whichever comes first.|\n|\nWarning:|\n   This boat is made of thin plastic.|\n   Good Luck!\" )",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "THIEF": {
+      "id": "THIEF",
+      "desc": "thief",
+      "raw_body": "(IN ROUND-ROOM)\n\t(SYNONYM THIEF ROBBER MAN PERSON)\n\t(ADJECTIVE SHADY SUSPICIOUS SEEDY)\n\t(DESC \"thief\")\n\t(FLAGS ACTORBIT INVISIBLE CONTBIT OPENBIT TRYTAKEBIT)\n\t(ACTION ROBBER-FUNCTION)\n\t(LDESC\n\"There is a suspicious-looking individual, holding a large bag, leaning\nagainst one wall. He is armed with a deadly stiletto.\")\n\t(STRENGTH 5)",
+      "raw_loc": null,
+      "flags": [
+        "ACTORBIT",
+        "CONTBIT",
+        "INVISIBLE",
+        "OPENBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": true
+    },
+    "PEDESTAL": {
+      "id": "PEDESTAL",
+      "desc": "pedestal",
+      "raw_body": "(IN TORCH-ROOM)\n\t(SYNONYM PEDESTAL)\n\t(ADJECTIVE WHITE MARBLE)\n\t(DESC \"pedestal\")\n\t(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT)\n\t(ACTION DUMB-CONTAINER)\n\t(CAPACITY 30)",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TORCH": {
+      "id": "TORCH",
+      "desc": "torch",
+      "raw_body": "(IN PEDESTAL)\n\t(SYNONYM TORCH IVORY TREASURE)\n\t(ADJECTIVE FLAMING IVORY)\n\t(DESC \"torch\")\n\t(FLAGS TAKEBIT FLAMEBIT ONBIT LIGHTBIT)\n\t(ACTION TORCH-OBJECT)\n\t(FDESC \"Sitting on the pedestal is a flaming torch, made of ivory.\")\n\t(SIZE 20)\n\t(VALUE 14)\n\t(TVALUE 6)",
+      "raw_loc": null,
+      "flags": [
+        "FLAMEBIT",
+        "LIGHTBIT",
+        "ONBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "GUIDE": {
+      "id": "GUIDE",
+      "desc": "tour guidebook",
+      "raw_body": "(IN DAM-LOBBY)\n\t(SYNONYM GUIDE BOOK BOOKS GUIDEBOOKS)\n\t(ADJECTIVE TOUR GUIDE)\n\t(DESC \"tour guidebook\")\n\t(FLAGS READBIT TAKEBIT BURNBIT)\n\t(FDESC\n\"Some guidebooks entitled \\\"Flood Control Dam #3\\\" are on the reception\ndesk.\")\n\t(TEXT\n\"\\\"\tFlood Control Dam #3|\n|\nFCD#3 was constructed in year 783 of the Great Underground Empire to\nharness the mighty Frigid River. This work was supported by a grant of\n37 million zorkmids from your omnipotent local tyrant Lord Dimwit\nFlathead the Excessive. This impressive structure is composed of\n370,000 cubic feet of concrete, is 256 feet tall at the center, and 193\nfeet wide at the top. The lake created behind the dam has a volume\nof 1.7 billion cubic feet, an area of 12 million square feet, and a\nshore line of 36 thousand feet.|\n|\nThe construction of FCD#3 took 112 days from ground breaking to\nthe dedication. It required a work force of 384 slaves, 34 slave\ndrivers, 12 engineers, 2 turtle doves, and a partridge in a pear\ntree. The work was managed by a command team composed of 2345\nbureaucrats, 2347 secretaries (at least two of whom could type),\n12,256 paper shufflers, 52,469 rubber stampers, 245,193 red tape\nprocessors, and nearly one million dead trees.|\n|\nWe will now point out some of the more interesting features\nof FCD#3 as we conduct you on a guided tour of the facilities:|\n|\n        1) You start your tour here in the Dam Lobby. You will notice\non your right that....\" )",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TROLL": {
+      "id": "TROLL",
+      "desc": "troll",
+      "raw_body": "(IN TROLL-ROOM)\n\t(SYNONYM TROLL)\n\t(ADJECTIVE NASTY)\n\t(DESC \"troll\")\n\t(FLAGS ACTORBIT OPENBIT TRYTAKEBIT)\n\t(ACTION TROLL-FCN)\n\t(LDESC\n\"A nasty-looking troll, brandishing a bloody axe, blocks all passages\nout of the room.\")\n\t(STRENGTH 2)",
+      "raw_loc": null,
+      "flags": [
+        "ACTORBIT",
+        "OPENBIT",
+        "TRYTAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": true
+    },
+    "TRUNK": {
+      "id": "TRUNK",
+      "desc": "trunk of jewels",
+      "raw_body": "(IN RESERVOIR)\n\t(SYNONYM TRUNK CHEST JEWELS TREASURE)\n\t(ADJECTIVE OLD)\n\t(DESC \"trunk of jewels\")\n\t(FLAGS TAKEBIT INVISIBLE)\n\t(FDESC\n\"Lying half buried in the mud is an old trunk, bulging with jewels.\")\n\t(LDESC \"There is an old trunk here, bulging with assorted jewels.\")\n\t(ACTION TRUNK-F)\n\t(SIZE 35)\n\t(VALUE 15)\n\t(TVALUE 5)",
+      "raw_loc": null,
+      "flags": [
+        "INVISIBLE",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "TUBE": {
+      "id": "TUBE",
+      "desc": "tube",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM TUBE TOOTH PASTE)\n\t(DESC \"tube\")\n\t(FLAGS TAKEBIT CONTBIT READBIT)\n\t(ACTION TUBE-FUNCTION)\n\t(LDESC\n\t \"There is an object which looks like a tube of toothpaste here.\")\n\t(CAPACITY 7)\n\t(SIZE 5)\n\t(TEXT\n\"---",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "PUTTY": {
+      "id": "PUTTY",
+      "desc": "viscous material",
+      "raw_body": "(IN TUBE)\n\t(SYNONYM MATERIAL GUNK)\n\t(ADJECTIVE VISCOUS)\n\t(DESC \"viscous material\")\n\t(FLAGS TAKEBIT TOOLBIT)\n\t(SIZE 6)\n\t(ACTION PUTTY-FCN)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "ENGRAVINGS": {
+      "id": "ENGRAVINGS",
+      "desc": "wall with engravings",
+      "raw_body": "(IN ENGRAVINGS-CAVE)\n\t(SYNONYM WALL ENGRAVINGS INSCRIPTION)\n\t(ADJECTIVE OLD ANCIENT)\n\t(DESC \"wall with engravings\")\n\t(FLAGS READBIT SACREDBIT)\n\t(LDESC \"There are old engravings on the walls here.\")\n\t(TEXT\n\"The engravings were incised in the living rock of the cave wall by\nan unknown hand. They depict, in symbolic form, the beliefs of the\nancient Zorkers. Skillfully interwoven with the bas reliefs are excerpts\nillustrating the major religious tenets of that time. Unfortunately, a\nlater age seems to have considered them blasphemous and just as skillfully\nexcised them.\")",
+      "raw_loc": null,
+      "flags": [
+        "READBIT",
+        "SACREDBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "OWNERS-MANUAL": {
+      "id": "OWNERS-MANUAL",
+      "desc": "ZORK owner's manual",
+      "raw_body": "(IN STUDIO)\n\t(SYNONYM MANUAL PIECE PAPER)\n\t(ADJECTIVE ZORK OWNERS SMALL)\n\t(DESC \"ZORK owner's manual\")\n\t(FLAGS READBIT TAKEBIT)\n\t(FDESC \"Loosely attached to a wall is a small piece of paper.\")\n\t(TEXT\n\"Congratulations!|\n|\nYou are the privileged owner of ZORK I: The Great Underground Empire,\na self-contained and self-maintaining universe. If used and maintained\nin accordance with normal operating practices for small universes, ZORK\nwill provide many months of trouble-free operation.\")",
+      "raw_loc": null,
+      "flags": [
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CLIMBABLE-CLIFF": {
+      "id": "CLIMBABLE-CLIFF",
+      "desc": "cliff",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM WALL CLIFF WALLS LEDGE)\n\t(ADJECTIVE ROCKY SHEER)\n\t(DESC \"cliff\")\n\t(ACTION CLIFF-OBJECT)\n\t(FLAGS NDESCBIT CLIMBBIT)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "WHITE-CLIFF": {
+      "id": "WHITE-CLIFF",
+      "desc": "white cliffs",
+      "raw_body": "(IN LOCAL-GLOBALS)\n\t(SYNONYM CLIFF CLIFFS)\n\t(ADJECTIVE WHITE)\n\t(DESC \"white cliffs\")\n\t(FLAGS NDESCBIT CLIMBBIT)\n\t(ACTION WCLIF-OBJECT)",
+      "raw_loc": null,
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "WRENCH": {
+      "id": "WRENCH",
+      "desc": "wrench",
+      "raw_body": "(IN MAINTENANCE-ROOM)\n\t(SYNONYM WRENCH TOOL TOOLS)\n\t(DESC \"wrench\")\n\t(FLAGS TAKEBIT TOOLBIT)\n\t(SIZE 10)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CONTROL-PANEL": {
+      "id": "CONTROL-PANEL",
+      "desc": "control panel",
+      "raw_body": "(IN DAM-ROOM)\n\t(SYNONYM PANEL)\n\t(ADJECTIVE CONTROL)\n\t(DESC \"control panel\")\n\t(FLAGS NDESCBIT)",
+      "raw_loc": null,
+      "flags": [
+        "NDESCBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "NEST": {
+      "id": "NEST",
+      "desc": "bird's nest",
+      "raw_body": "(IN UP-A-TREE)\n\t(SYNONYM NEST)\n\t(ADJECTIVE BIRDS)\n\t(DESC \"bird's nest\")\n\t(FLAGS TAKEBIT BURNBIT CONTBIT OPENBIT SEARCHBIT)\n\t(FDESC \"Beside you on the branch is a small bird's nest.\")\n\t(CAPACITY 20)",
+      "raw_loc": null,
+      "flags": [
+        "BURNBIT",
+        "CONTBIT",
+        "OPENBIT",
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "EGG": {
+      "id": "EGG",
+      "desc": "jewel-encrusted egg",
+      "raw_body": "(IN NEST)\n\t(SYNONYM EGG TREASURE)\n\t(ADJECTIVE BIRDS ENCRUSTED JEWELED)\n\t(DESC \"jewel-encrusted egg\")\n\t(FLAGS TAKEBIT CONTBIT SEARCHBIT)\n\t(ACTION EGG-OBJECT)\n\t(VALUE 5)\n\t(TVALUE 5)\n\t(CAPACITY 6)\n\t(FDESC\n\"In the bird's nest is a large egg encrusted with precious jewels,\napparently scavenged by a childless songbird. The egg is covered with\nfine gold inlay, and ornamented in lapis lazuli and mother-of-pearl.\nUnlike most eggs, this one is hinged and closed with a delicate looking\nclasp. The egg appears extremely fragile.\")",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BROKEN-EGG": {
+      "id": "BROKEN-EGG",
+      "desc": "broken jewel-encrusted egg",
+      "raw_body": "(SYNONYM EGG TREASURE)\n\t(ADJECTIVE BROKEN BIRDS ENCRUSTED JEWEL)\n\t(DESC \"broken jewel-encrusted egg\")\n\t(FLAGS TAKEBIT CONTBIT OPENBIT)\n\t(CAPACITY 6)\n\t(TVALUE 2)\n\t(LDESC \"There is a somewhat ruined egg here.\")",
+      "raw_loc": null,
+      "flags": [
+        "CONTBIT",
+        "OPENBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BAUBLE": {
+      "id": "BAUBLE",
+      "desc": "beautiful brass bauble",
+      "raw_body": "(SYNONYM BAUBLE TREASURE)\n\t(ADJECTIVE BRASS BEAUTI)\n\t(DESC \"beautiful brass bauble\")\n\t(FLAGS TAKEBIT)\n\t(VALUE 1)\n\t(TVALUE 1)",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "CANARY": {
+      "id": "CANARY",
+      "desc": "golden clockwork canary",
+      "raw_body": "(IN EGG)\n\t(SYNONYM CANARY TREASURE)\n\t(ADJECTIVE CLOCKWORK GOLD GOLDEN)\n\t(DESC \"golden clockwork canary\")\n\t(FLAGS TAKEBIT SEARCHBIT)\n\t(ACTION CANARY-OBJECT)\n\t(VALUE 6)\n\t(TVALUE 4)\n\t(FDESC\n\"There is a golden clockwork canary nestled in the egg. It has ruby\neyes and a silver beak. Through a crystal window below its left\nwing you can see intricate machinery inside. It appears to have\nwound down.\")",
+      "raw_loc": null,
+      "flags": [
+        "SEARCHBIT",
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    },
+    "BROKEN-CANARY": {
+      "id": "BROKEN-CANARY",
+      "desc": "broken clockwork canary",
+      "raw_body": "(IN BROKEN-EGG)\n\t(SYNONYM CANARY TREASURE)\n\t(ADJECTIVE BROKEN CLOCKWORK GOLD GOLDEN)\n\t(DESC \"broken clockwork canary\")\n\t(FLAGS TAKEBIT)\n\t(ACTION CANARY-OBJECT)\n\t(TVALUE 1)\n\t(FDESC\n\"There is a golden clockwork canary nestled in the egg. It seems to\nhave recently had a bad experience. The mountings for its jewel-like\neyes are empty, and its silver beak is crumpled. Through a cracked\ncrystal window below its left wing you can see the remains of\nintricate machinery. It is not clear what result winding it would\nhave, as the mainspring seems sprung.\")",
+      "raw_loc": null,
+      "flags": [
+        "TAKEBIT"
+      ],
+      "loc": null,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "is_enemy": false
+    }
+  }
+}

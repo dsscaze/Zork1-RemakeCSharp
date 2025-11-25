@@ -1,0 +1,3757 @@
+{
+  "summary": {
+    "room_count": 110,
+    "object_count": 122,
+    "enemy_count": 0
+  },
+  "rooms": [
+    {
+      "id": "ARAGAIN-FALLS",
+      "desc": "Aragain Falls",
+      "exits": {
+        "WEST": [
+          "ON-RAINBOW"
+        ],
+        "NORTH": [
+          "SHORE"
+        ],
+        "UP": [
+          "ON-RAINBOW"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "ATLANTIS-ROOM",
+      "desc": "Atlantis Room",
+      "exits": {
+        "UP": [
+          "SMALL-CAVE"
+        ],
+        "SOUTH": [
+          "RESERVOIR-NORTH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "ATTIC",
+      "desc": "Attic",
+      "exits": {
+        "DOWN": [
+          "KITCHEN"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "BAT-ROOM",
+      "desc": "Bat Room",
+      "exits": {
+        "SOUTH": [
+          "SQUEEKY-ROOM"
+        ],
+        "EAST": [
+          "SHAFT-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CANYON-BOTTOM",
+      "desc": "Canyon Bottom",
+      "exits": {
+        "UP": [
+          "CLIFF-MIDDLE"
+        ],
+        "NORTH": [
+          "END-OF-RAINBOW"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CANYON-VIEW",
+      "desc": "Canyon View",
+      "exits": {
+        "EAST": [
+          "CLIFF-MIDDLE"
+        ],
+        "DOWN": [
+          "CLIFF-MIDDLE"
+        ],
+        "NW": [
+          "CLEARING"
+        ],
+        "WEST": [
+          "FOREST-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CELLAR",
+      "desc": "Cellar",
+      "exits": {
+        "NORTH": [
+          "TROLL-ROOM"
+        ],
+        "SOUTH": [
+          "EAST-OF-CHASM"
+        ],
+        "UP": [
+          "LIVING-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CHASM-ROOM",
+      "desc": "Chasm",
+      "exits": {
+        "NE": [
+          "RESERVOIR-SOUTH"
+        ],
+        "SW": [
+          "EW-PASSAGE"
+        ],
+        "UP": [
+          "EW-PASSAGE"
+        ],
+        "SOUTH": [
+          "NS-PASSAGE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CLEARING",
+      "desc": "Clearing",
+      "exits": {
+        "EAST": [
+          "CANYON-VIEW"
+        ],
+        "NORTH": [
+          "FOREST-2"
+        ],
+        "SOUTH": [
+          "FOREST-3"
+        ],
+        "WEST": [
+          "EAST-OF-HOUSE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CLIFF-MIDDLE",
+      "desc": "Rocky Ledge",
+      "exits": {
+        "UP": [
+          "CANYON-VIEW"
+        ],
+        "DOWN": [
+          "CANYON-BOTTOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "COLD-PASSAGE",
+      "desc": "Cold Passage",
+      "exits": {
+        "SOUTH": [
+          "MIRROR-ROOM-1"
+        ],
+        "WEST": [
+          "SLIDE-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "CYCLOPS-ROOM",
+      "desc": "Cyclops Room",
+      "exits": {
+        "NW": [
+          "MAZE-15"
+        ],
+        "EAST": [
+          "STRANGE-PASSAGE"
+        ],
+        "UP": [
+          "TREASURE-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DAM-BASE",
+      "desc": "Dam Base",
+      "exits": {
+        "NORTH": [
+          "DAM-ROOM"
+        ],
+        "UP": [
+          "DAM-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DAM-LOBBY",
+      "desc": "Dam Lobby",
+      "exits": {
+        "SOUTH": [
+          "DAM-ROOM"
+        ],
+        "NORTH": [
+          "MAINTENANCE-ROOM"
+        ],
+        "EAST": [
+          "MAINTENANCE-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DAM-ROOM",
+      "desc": "Dam",
+      "exits": {
+        "SOUTH": [
+          "DEEP-CANYON"
+        ],
+        "DOWN": [
+          "DAM-BASE"
+        ],
+        "EAST": [
+          "DAM-BASE"
+        ],
+        "NORTH": [
+          "DAM-LOBBY"
+        ],
+        "WEST": [
+          "RESERVOIR-SOUTH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DAMP-CAVE",
+      "desc": "Damp Cave",
+      "exits": {
+        "WEST": [
+          "LOUD-ROOM"
+        ],
+        "EAST": [
+          "WHITE-CLIFFS-NORTH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DEAD-END-1",
+      "desc": "Dead End",
+      "exits": {
+        "SOUTH": [
+          "MAZE-4"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DEAD-END-2",
+      "desc": "Dead End",
+      "exits": {
+        "WEST": [
+          "MAZE-5"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DEAD-END-3",
+      "desc": "Dead End",
+      "exits": {
+        "NORTH": [
+          "MAZE-8"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DEAD-END-4",
+      "desc": "Dead End",
+      "exits": {
+        "SOUTH": [
+          "MAZE-12"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DEAD-END-5",
+      "desc": "Dead End",
+      "exits": {
+        "NORTH": [
+          "LADDER-BOTTOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DEEP-CANYON",
+      "desc": "Deep Canyon",
+      "exits": {
+        "NW": [
+          "RESERVOIR-SOUTH"
+        ],
+        "EAST": [
+          "DAM-ROOM"
+        ],
+        "SW": [
+          "NS-PASSAGE"
+        ],
+        "DOWN": [
+          "LOUD-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "DOME-ROOM",
+      "desc": "Dome Room",
+      "exits": {
+        "WEST": [
+          "ENGRAVINGS-CAVE"
+        ],
+        "DOWN": [
+          "TORCH-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "EAST-OF-CHASM",
+      "desc": "East of Chasm",
+      "exits": {
+        "NORTH": [
+          "CELLAR"
+        ],
+        "EAST": [
+          "GALLERY"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "EAST-OF-HOUSE",
+      "desc": "Behind House",
+      "exits": {
+        "NORTH": [
+          "NORTH-OF-HOUSE"
+        ],
+        "SOUTH": [
+          "SOUTH-OF-HOUSE"
+        ],
+        "SW": [
+          "SOUTH-OF-HOUSE"
+        ],
+        "NW": [
+          "NORTH-OF-HOUSE"
+        ],
+        "EAST": [
+          "CLEARING"
+        ],
+        "WEST": [
+          "KITCHEN"
+        ],
+        "IN": [
+          "KITCHEN"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "EGYPT-ROOM",
+      "desc": "Egyptian Room",
+      "exits": {
+        "WEST": [
+          "NORTH-TEMPLE"
+        ],
+        "UP": [
+          "NORTH-TEMPLE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "END-OF-RAINBOW",
+      "desc": "End of Rainbow",
+      "exits": {
+        "UP": [
+          "ON-RAINBOW"
+        ],
+        "NE": [
+          "ON-RAINBOW"
+        ],
+        "EAST": [
+          "ON-RAINBOW"
+        ],
+        "SW": [
+          "CANYON-BOTTOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "ENGRAVINGS-CAVE",
+      "desc": "Engravings Cave",
+      "exits": {
+        "NW": [
+          "ROUND-ROOM"
+        ],
+        "EAST": [
+          "DOME-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "ENTRANCE-TO-HADES",
+      "desc": "Entrance to Hades",
+      "exits": {
+        "UP": [
+          "TINY-CAVE"
+        ],
+        "IN": [
+          "LAND-OF-LIVING-DEAD"
+        ],
+        "SOUTH": [
+          "LAND-OF-LIVING-DEAD"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "EW-PASSAGE",
+      "desc": "East-West Passage",
+      "exits": {
+        "EAST": [
+          "ROUND-ROOM"
+        ],
+        "WEST": [
+          "TROLL-ROOM"
+        ],
+        "DOWN": [
+          "CHASM-ROOM"
+        ],
+        "NORTH": [
+          "CHASM-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "FOREST-1",
+      "desc": "Forest",
+      "exits": {
+        "NORTH": [
+          "GRATING-CLEARING"
+        ],
+        "EAST": [
+          "PATH"
+        ],
+        "SOUTH": [
+          "FOREST-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "FOREST-2",
+      "desc": "Forest",
+      "exits": {
+        "EAST": [
+          "MOUNTAINS"
+        ],
+        "SOUTH": [
+          "CLEARING"
+        ],
+        "WEST": [
+          "PATH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "FOREST-3",
+      "desc": "Forest",
+      "exits": {
+        "NORTH": [
+          "CLEARING"
+        ],
+        "WEST": [
+          "FOREST-1"
+        ],
+        "NW": [
+          "SOUTH-OF-HOUSE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "GALLERY",
+      "desc": "Gallery",
+      "exits": {
+        "WEST": [
+          "EAST-OF-CHASM"
+        ],
+        "NORTH": [
+          "STUDIO"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "GAS-ROOM",
+      "desc": "Gas Room",
+      "exits": {
+        "UP": [
+          "SMELLY-ROOM"
+        ],
+        "EAST": [
+          "MINE-1"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "GRATING-CLEARING",
+      "desc": "Clearing",
+      "exits": {
+        "EAST": [
+          "FOREST-2"
+        ],
+        "WEST": [
+          "FOREST-1"
+        ],
+        "SOUTH": [
+          "PATH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "GRATING-ROOM",
+      "desc": "Grating Room",
+      "exits": {
+        "SW": [
+          "MAZE-11"
+        ],
+        "UP": [
+          "GRATING-CLEARING"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "IN-STREAM",
+      "desc": "Stream",
+      "exits": {
+        "DOWN": [
+          "RESERVOIR"
+        ],
+        "EAST": [
+          "RESERVOIR"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "KITCHEN",
+      "desc": "Kitchen",
+      "exits": {
+        "EAST": [
+          "EAST-OF-HOUSE"
+        ],
+        "WEST": [
+          "LIVING-ROOM"
+        ],
+        "OUT": [
+          "EAST-OF-HOUSE"
+        ],
+        "UP": [
+          "ATTIC"
+        ],
+        "DOWN": [
+          "STUDIO"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "LADDER-BOTTOM",
+      "desc": "Ladder Bottom",
+      "exits": {
+        "SOUTH": [
+          "DEAD-END-5"
+        ],
+        "WEST": [
+          "TIMBER-ROOM"
+        ],
+        "UP": [
+          "LADDER-TOP"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "LADDER-TOP",
+      "desc": "Ladder Top",
+      "exits": {
+        "DOWN": [
+          "LADDER-BOTTOM"
+        ],
+        "UP": [
+          "MINE-4"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "LAND-OF-LIVING-DEAD",
+      "desc": "Land of the Dead",
+      "exits": {
+        "OUT": [
+          "ENTRANCE-TO-HADES"
+        ],
+        "NORTH": [
+          "ENTRANCE-TO-HADES"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "LIVING-ROOM",
+      "desc": "Living Room",
+      "exits": {
+        "EAST": [
+          "KITCHEN"
+        ],
+        "WEST": [
+          "STRANGE-PASSAGE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "LOUD-ROOM",
+      "desc": "Loud Room",
+      "exits": {
+        "EAST": [
+          "DAMP-CAVE"
+        ],
+        "WEST": [
+          "ROUND-ROOM"
+        ],
+        "UP": [
+          "DEEP-CANYON"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "LOWER-SHAFT",
+      "desc": "Drafty Room",
+      "exits": {
+        "SOUTH": [
+          "MACHINE-ROOM"
+        ],
+        "OUT": [
+          "TIMBER-ROOM"
+        ],
+        "EAST": [
+          "TIMBER-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MACHINE-ROOM",
+      "desc": "Machine Room",
+      "exits": {
+        "NORTH": [
+          "LOWER-SHAFT"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAINTENANCE-ROOM",
+      "desc": "Maintenance Room",
+      "exits": {
+        "SOUTH": [
+          "DAM-LOBBY"
+        ],
+        "WEST": [
+          "DAM-LOBBY"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-1",
+      "desc": "Maze",
+      "exits": {
+        "EAST": [
+          "TROLL-ROOM"
+        ],
+        "NORTH": [
+          "MAZE-1"
+        ],
+        "SOUTH": [
+          "MAZE-2"
+        ],
+        "WEST": [
+          "MAZE-4"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-10",
+      "desc": "Maze",
+      "exits": {
+        "EAST": [
+          "MAZE-9"
+        ],
+        "WEST": [
+          "MAZE-13"
+        ],
+        "UP": [
+          "MAZE-11"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-11",
+      "desc": "Maze",
+      "exits": {
+        "NE": [
+          "GRATING-ROOM"
+        ],
+        "DOWN": [
+          "MAZE-10"
+        ],
+        "NW": [
+          "MAZE-13"
+        ],
+        "SW": [
+          "MAZE-12"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-12",
+      "desc": "Maze",
+      "exits": {
+        "SW": [
+          "MAZE-11"
+        ],
+        "EAST": [
+          "MAZE-13"
+        ],
+        "UP": [
+          "MAZE-9"
+        ],
+        "NORTH": [
+          "DEAD-END-4"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-13",
+      "desc": "Maze",
+      "exits": {
+        "EAST": [
+          "MAZE-9"
+        ],
+        "DOWN": [
+          "MAZE-12"
+        ],
+        "SOUTH": [
+          "MAZE-10"
+        ],
+        "WEST": [
+          "MAZE-11"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-14",
+      "desc": "Maze",
+      "exits": {
+        "WEST": [
+          "MAZE-15"
+        ],
+        "NW": [
+          "MAZE-14"
+        ],
+        "NE": [
+          "MAZE-7"
+        ],
+        "SOUTH": [
+          "MAZE-7"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-15",
+      "desc": "Maze",
+      "exits": {
+        "WEST": [
+          "MAZE-14"
+        ],
+        "SOUTH": [
+          "MAZE-7"
+        ],
+        "SE": [
+          "CYCLOPS-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-2",
+      "desc": "Maze",
+      "exits": {
+        "SOUTH": [
+          "MAZE-1"
+        ],
+        "EAST": [
+          "MAZE-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-3",
+      "desc": "Maze",
+      "exits": {
+        "WEST": [
+          "MAZE-2"
+        ],
+        "NORTH": [
+          "MAZE-4"
+        ],
+        "UP": [
+          "MAZE-5"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-4",
+      "desc": "Maze",
+      "exits": {
+        "WEST": [
+          "MAZE-3"
+        ],
+        "NORTH": [
+          "MAZE-1"
+        ],
+        "EAST": [
+          "DEAD-END-1"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-5",
+      "desc": "Maze",
+      "exits": {
+        "EAST": [
+          "DEAD-END-2"
+        ],
+        "NORTH": [
+          "MAZE-3"
+        ],
+        "SW": [
+          "MAZE-6"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-6",
+      "desc": "Maze",
+      "exits": {
+        "DOWN": [
+          "MAZE-5"
+        ],
+        "EAST": [
+          "MAZE-7"
+        ],
+        "WEST": [
+          "MAZE-6"
+        ],
+        "UP": [
+          "MAZE-9"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-7",
+      "desc": "Maze",
+      "exits": {
+        "UP": [
+          "MAZE-14"
+        ],
+        "WEST": [
+          "MAZE-6"
+        ],
+        "EAST": [
+          "MAZE-8"
+        ],
+        "SOUTH": [
+          "MAZE-15"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-8",
+      "desc": "Maze",
+      "exits": {
+        "NE": [
+          "MAZE-7"
+        ],
+        "WEST": [
+          "MAZE-8"
+        ],
+        "SE": [
+          "DEAD-END-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MAZE-9",
+      "desc": "Maze",
+      "exits": {
+        "NORTH": [
+          "MAZE-6"
+        ],
+        "EAST": [
+          "MAZE-10"
+        ],
+        "SOUTH": [
+          "MAZE-13"
+        ],
+        "WEST": [
+          "MAZE-12"
+        ],
+        "NW": [
+          "MAZE-9"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MINE-1",
+      "desc": "Coal Mine",
+      "exits": {
+        "NORTH": [
+          "GAS-ROOM"
+        ],
+        "EAST": [
+          "MINE-1"
+        ],
+        "NE": [
+          "MINE-2"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MINE-2",
+      "desc": "Coal Mine",
+      "exits": {
+        "NORTH": [
+          "MINE-2"
+        ],
+        "SOUTH": [
+          "MINE-1"
+        ],
+        "SE": [
+          "MINE-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MINE-3",
+      "desc": "Coal Mine",
+      "exits": {
+        "SOUTH": [
+          "MINE-3"
+        ],
+        "SW": [
+          "MINE-4"
+        ],
+        "EAST": [
+          "MINE-2"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MINE-4",
+      "desc": "Coal Mine",
+      "exits": {
+        "NORTH": [
+          "MINE-3"
+        ],
+        "WEST": [
+          "MINE-4"
+        ],
+        "DOWN": [
+          "LADDER-TOP"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MINE-ENTRANCE",
+      "desc": "Mine Entrance",
+      "exits": {
+        "SOUTH": [
+          "SLIDE-ROOM"
+        ],
+        "IN": [
+          "SQUEEKY-ROOM"
+        ],
+        "WEST": [
+          "SQUEEKY-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MIRROR-ROOM-1",
+      "desc": "Mirror Room",
+      "exits": {
+        "NORTH": [
+          "COLD-PASSAGE"
+        ],
+        "WEST": [
+          "TWISTING-PASSAGE"
+        ],
+        "EAST": [
+          "SMALL-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MIRROR-ROOM-2",
+      "desc": "Mirror Room",
+      "exits": {
+        "WEST": [
+          "WINDING-PASSAGE"
+        ],
+        "NORTH": [
+          "NARROW-PASSAGE"
+        ],
+        "EAST": [
+          "TINY-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "MOUNTAINS",
+      "desc": "Forest",
+      "exits": {
+        "NORTH": [
+          "FOREST-2"
+        ],
+        "SOUTH": [
+          "FOREST-2"
+        ],
+        "WEST": [
+          "FOREST-2"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "NARROW-PASSAGE",
+      "desc": "Narrow Passage",
+      "exits": {
+        "NORTH": [
+          "ROUND-ROOM"
+        ],
+        "SOUTH": [
+          "MIRROR-ROOM-2"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "NORTH-OF-HOUSE",
+      "desc": "North of House",
+      "exits": {
+        "SW": [
+          "WEST-OF-HOUSE"
+        ],
+        "SE": [
+          "EAST-OF-HOUSE"
+        ],
+        "WEST": [
+          "WEST-OF-HOUSE"
+        ],
+        "EAST": [
+          "EAST-OF-HOUSE"
+        ],
+        "NORTH": [
+          "PATH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "NORTH-TEMPLE",
+      "desc": "Temple",
+      "exits": {
+        "DOWN": [
+          "EGYPT-ROOM"
+        ],
+        "EAST": [
+          "EGYPT-ROOM"
+        ],
+        "NORTH": [
+          "TORCH-ROOM"
+        ],
+        "OUT": [
+          "TORCH-ROOM"
+        ],
+        "UP": [
+          "TORCH-ROOM"
+        ],
+        "SOUTH": [
+          "SOUTH-TEMPLE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "NS-PASSAGE",
+      "desc": "North-South Passage",
+      "exits": {
+        "NORTH": [
+          "CHASM-ROOM"
+        ],
+        "NE": [
+          "DEEP-CANYON"
+        ],
+        "SOUTH": [
+          "ROUND-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "ON-RAINBOW",
+      "desc": "On the Rainbow",
+      "exits": {
+        "WEST": [
+          "END-OF-RAINBOW"
+        ],
+        "EAST": [
+          "ARAGAIN-FALLS"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "PATH",
+      "desc": "Forest Path",
+      "exits": {
+        "UP": [
+          "UP-A-TREE"
+        ],
+        "NORTH": [
+          "GRATING-CLEARING"
+        ],
+        "EAST": [
+          "FOREST-2"
+        ],
+        "SOUTH": [
+          "NORTH-OF-HOUSE"
+        ],
+        "WEST": [
+          "FOREST-1"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RESERVOIR",
+      "desc": "Reservoir",
+      "exits": {
+        "NORTH": [
+          "RESERVOIR-NORTH"
+        ],
+        "SOUTH": [
+          "RESERVOIR-SOUTH"
+        ],
+        "UP": [
+          "IN-STREAM"
+        ],
+        "WEST": [
+          "IN-STREAM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RESERVOIR-NORTH",
+      "desc": "Reservoir North",
+      "exits": {
+        "NORTH": [
+          "ATLANTIS-ROOM"
+        ],
+        "SOUTH": [
+          "RESERVOIR"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RESERVOIR-SOUTH",
+      "desc": "Reservoir South",
+      "exits": {
+        "SE": [
+          "DEEP-CANYON"
+        ],
+        "SW": [
+          "CHASM-ROOM"
+        ],
+        "EAST": [
+          "DAM-ROOM"
+        ],
+        "WEST": [
+          "STREAM-VIEW"
+        ],
+        "NORTH": [
+          "RESERVOIR"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RIVER-1",
+      "desc": "Frigid River",
+      "exits": {
+        "WEST": [
+          "DAM-BASE"
+        ],
+        "DOWN": [
+          "RIVER-2"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RIVER-2",
+      "desc": "Frigid River",
+      "exits": {
+        "DOWN": [
+          "RIVER-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RIVER-3",
+      "desc": "Frigid River",
+      "exits": {
+        "DOWN": [
+          "RIVER-4"
+        ],
+        "WEST": [
+          "WHITE-CLIFFS-NORTH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RIVER-4",
+      "desc": "Frigid River",
+      "exits": {
+        "DOWN": [
+          "RIVER-5"
+        ],
+        "WEST": [
+          "WHITE-CLIFFS-SOUTH"
+        ],
+        "EAST": [
+          "SANDY-BEACH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "RIVER-5",
+      "desc": "Frigid River",
+      "exits": {
+        "EAST": [
+          "SHORE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "ROUND-ROOM",
+      "desc": "Round Room",
+      "exits": {
+        "EAST": [
+          "LOUD-ROOM"
+        ],
+        "WEST": [
+          "EW-PASSAGE"
+        ],
+        "NORTH": [
+          "NS-PASSAGE"
+        ],
+        "SOUTH": [
+          "NARROW-PASSAGE"
+        ],
+        "SE": [
+          "ENGRAVINGS-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SANDY-BEACH",
+      "desc": "Sandy Beach",
+      "exits": {
+        "NE": [
+          "SANDY-CAVE"
+        ],
+        "SOUTH": [
+          "SHORE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SANDY-CAVE",
+      "desc": "Sandy Cave",
+      "exits": {
+        "SW": [
+          "SANDY-BEACH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SHAFT-ROOM",
+      "desc": "Shaft Room",
+      "exits": {
+        "WEST": [
+          "BAT-ROOM"
+        ],
+        "NORTH": [
+          "SMELLY-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SHORE",
+      "desc": "Shore",
+      "exits": {
+        "NORTH": [
+          "SANDY-BEACH"
+        ],
+        "SOUTH": [
+          "ARAGAIN-FALLS"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SLIDE-ROOM",
+      "desc": "Slide Room",
+      "exits": {
+        "EAST": [
+          "COLD-PASSAGE"
+        ],
+        "NORTH": [
+          "MINE-ENTRANCE"
+        ],
+        "DOWN": [
+          "CELLAR"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SMALL-CAVE",
+      "desc": "Cave",
+      "exits": {
+        "NORTH": [
+          "MIRROR-ROOM-1"
+        ],
+        "DOWN": [
+          "ATLANTIS-ROOM"
+        ],
+        "SOUTH": [
+          "ATLANTIS-ROOM"
+        ],
+        "WEST": [
+          "TWISTING-PASSAGE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SMELLY-ROOM",
+      "desc": "Smelly Room",
+      "exits": {
+        "DOWN": [
+          "GAS-ROOM"
+        ],
+        "SOUTH": [
+          "SHAFT-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SOUTH-OF-HOUSE",
+      "desc": "South of House",
+      "exits": {
+        "WEST": [
+          "WEST-OF-HOUSE"
+        ],
+        "EAST": [
+          "EAST-OF-HOUSE"
+        ],
+        "NE": [
+          "EAST-OF-HOUSE"
+        ],
+        "NW": [
+          "WEST-OF-HOUSE"
+        ],
+        "SOUTH": [
+          "FOREST-3"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SOUTH-TEMPLE",
+      "desc": "Altar",
+      "exits": {
+        "NORTH": [
+          "NORTH-TEMPLE"
+        ],
+        "DOWN": [
+          "TINY-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "SQUEEKY-ROOM",
+      "desc": "Squeaky Room",
+      "exits": {
+        "NORTH": [
+          "BAT-ROOM"
+        ],
+        "EAST": [
+          "MINE-ENTRANCE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "STONE-BARROW",
+      "desc": "Stone Barrow",
+      "exits": {
+        "NE": [
+          "WEST-OF-HOUSE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "STRANGE-PASSAGE",
+      "desc": "Strange Passage",
+      "exits": {
+        "WEST": [
+          "CYCLOPS-ROOM"
+        ],
+        "IN": [
+          "CYCLOPS-ROOM"
+        ],
+        "EAST": [
+          "LIVING-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "STREAM-VIEW",
+      "desc": "Stream View",
+      "exits": {
+        "EAST": [
+          "RESERVOIR-SOUTH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "STUDIO",
+      "desc": "Studio",
+      "exits": {
+        "SOUTH": [
+          "GALLERY"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "TIMBER-ROOM",
+      "desc": "Timber Room",
+      "exits": {
+        "EAST": [
+          "LADDER-BOTTOM"
+        ],
+        "WEST": [
+          "LOWER-SHAFT"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "TINY-CAVE",
+      "desc": "Cave",
+      "exits": {
+        "NORTH": [
+          "MIRROR-ROOM-2"
+        ],
+        "WEST": [
+          "WINDING-PASSAGE"
+        ],
+        "DOWN": [
+          "ENTRANCE-TO-HADES"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "TORCH-ROOM",
+      "desc": "Torch Room",
+      "exits": {
+        "SOUTH": [
+          "NORTH-TEMPLE"
+        ],
+        "DOWN": [
+          "NORTH-TEMPLE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "TREASURE-ROOM",
+      "desc": "Treasure Room",
+      "exits": {
+        "DOWN": [
+          "CYCLOPS-ROOM"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "TROLL-ROOM",
+      "desc": "The Troll Room",
+      "exits": {
+        "SOUTH": [
+          "CELLAR"
+        ],
+        "EAST": [
+          "EW-PASSAGE"
+        ],
+        "WEST": [
+          "MAZE-1"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "TWISTING-PASSAGE",
+      "desc": "Twisting Passage",
+      "exits": {
+        "NORTH": [
+          "MIRROR-ROOM-1"
+        ],
+        "EAST": [
+          "SMALL-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "UP-A-TREE",
+      "desc": "Up a Tree",
+      "exits": {
+        "DOWN": [
+          "PATH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "WEST-OF-HOUSE",
+      "desc": "West of House",
+      "exits": {
+        "NORTH": [
+          "NORTH-OF-HOUSE"
+        ],
+        "SOUTH": [
+          "SOUTH-OF-HOUSE"
+        ],
+        "NE": [
+          "NORTH-OF-HOUSE"
+        ],
+        "SE": [
+          "SOUTH-OF-HOUSE"
+        ],
+        "WEST": [
+          "FOREST-1"
+        ],
+        "SW": [
+          "STONE-BARROW"
+        ],
+        "IN": [
+          "STONE-BARROW"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "WHITE-CLIFFS-NORTH",
+      "desc": "White Cliffs Beach",
+      "exits": {
+        "SOUTH": [
+          "WHITE-CLIFFS-SOUTH"
+        ],
+        "WEST": [
+          "DAMP-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "WHITE-CLIFFS-SOUTH",
+      "desc": "White Cliffs Beach",
+      "exits": {
+        "NORTH": [
+          "WHITE-CLIFFS-NORTH"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    },
+    {
+      "id": "WINDING-PASSAGE",
+      "desc": "Winding Passage",
+      "exits": {
+        "NORTH": [
+          "MIRROR-ROOM-2"
+        ],
+        "EAST": [
+          "TINY-CAVE"
+        ]
+      },
+      "objects_direct": [],
+      "objects_indirect": [],
+      "enemies_direct": [],
+      "enemies_indirect": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "ADVERTISEMENT",
+      "desc": "leaflet",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "ALTAR",
+      "desc": "altar",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "SURFACEBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "ATTIC-TABLE",
+      "desc": "table",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CONTBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "AXE",
+      "desc": "bloody axe",
+      "loc": "",
+      "flags": [
+        "WEAPONBIT",
+        "TRYTAKEBIT",
+        "TAKEBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BAG-OF-COINS",
+      "desc": "leather bag of coins",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BAR",
+      "desc": "platinum bar",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "SACREDBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BARROW",
+      "desc": "stone barrow",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BARROW-DOOR",
+      "desc": "stone door",
+      "loc": "",
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT",
+        "OPENBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BAT",
+      "desc": "bat",
+      "loc": "",
+      "flags": [
+        "ACTORBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BAUBLE",
+      "desc": "beautiful brass bauble",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BELL",
+      "desc": "brass bell",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BLUE-BUTTON",
+      "desc": "blue button",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BOARD",
+      "desc": "board",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BOARDED-WINDOW",
+      "desc": "boarded window",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BOAT-LABEL",
+      "desc": "tan label",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BODIES",
+      "desc": "pile of bodies",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BOLT",
+      "desc": "bolt",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "TURNBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BONES",
+      "desc": "skeleton",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BOOK",
+      "desc": "black book",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "TAKEBIT",
+        "CONTBIT",
+        "BURNBIT",
+        "TURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BOTTLE",
+      "desc": "glass bottle",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TRANSBIT",
+        "CONTBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BRACELET",
+      "desc": "sapphire-encrusted bracelet",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BROKEN-CANARY",
+      "desc": "broken clockwork canary",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BROKEN-EGG",
+      "desc": "broken jewel-encrusted egg",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BROKEN-LAMP",
+      "desc": "broken lantern",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BROWN-BUTTON",
+      "desc": "brown button",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BUBBLE",
+      "desc": "green bubble",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BUOY",
+      "desc": "red buoy",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "CONTBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "BURNED-OUT-LANTERN",
+      "desc": "burned-out lantern",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CANARY",
+      "desc": "golden clockwork canary",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "SEARCHBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CANDLES",
+      "desc": "pair of candles",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "FLAMEBIT",
+        "ONBIT",
+        "LIGHTBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CHALICE",
+      "desc": "chalice",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TRYTAKEBIT",
+        "CONTBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CHIMNEY",
+      "desc": "chimney",
+      "loc": "",
+      "flags": [
+        "CLIMBBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CLIMBABLE-CLIFF",
+      "desc": "cliff",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "COAL",
+      "desc": "small pile of coal",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "COFFIN",
+      "desc": "gold coffin",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "CONTBIT",
+        "SACREDBIT",
+        "SEARCHBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CONTROL-PANEL",
+      "desc": "control panel",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CRACK",
+      "desc": "crack",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "CYCLOPS",
+      "desc": "cyclops",
+      "loc": "",
+      "flags": [
+        "ACTORBIT",
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "DAM",
+      "desc": "dam",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "DIAMOND",
+      "desc": "huge diamond",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "EGG",
+      "desc": "jewel-encrusted egg",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "CONTBIT",
+        "SEARCHBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "EMERALD",
+      "desc": "large emerald",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "ENGRAVINGS",
+      "desc": "wall with engravings",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "SACREDBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "FOREST",
+      "desc": "forest",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "FRONT-DOOR",
+      "desc": "door",
+      "loc": "",
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GARLIC",
+      "desc": "clove of garlic",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "FOODBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GHOSTS",
+      "desc": "number of ghosts",
+      "loc": "",
+      "flags": [
+        "ACTORBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GLOBAL-WATER",
+      "desc": "water",
+      "loc": "",
+      "flags": [
+        "DRINKBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GRANITE-WALL",
+      "desc": "granite wall",
+      "loc": "",
+      "flags": [],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GRATE",
+      "desc": "grating",
+      "loc": "",
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT",
+        "INVISIBLE"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GUIDE",
+      "desc": "tour guidebook",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "GUNK",
+      "desc": "small piece of vitreous slag",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "HOT-BELL",
+      "desc": "red hot brass bell",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "INFLATABLE-BOAT",
+      "desc": "pile of plastic",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "INFLATED-BOAT",
+      "desc": "magic boat",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT",
+        "VEHBIT",
+        "OPENBIT",
+        "SEARCHBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "JADE",
+      "desc": "jade figurine",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "KEYS",
+      "desc": "skeleton key",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "KITCHEN-TABLE",
+      "desc": "kitchen table",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CONTBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "KITCHEN-WINDOW",
+      "desc": "kitchen window",
+      "loc": "",
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "KNIFE",
+      "desc": "nasty knife",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "WEAPONBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LADDER",
+      "desc": "wooden ladder",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LAMP",
+      "desc": "brass lantern",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "LIGHTBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LARGE-BAG",
+      "desc": "large bag",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LEAK",
+      "desc": "leak",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "INVISIBLE"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LEAVES",
+      "desc": "pile of leaves",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LOWERED-BASKET",
+      "desc": "basket",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "LUNCH",
+      "desc": "lunch",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "FOODBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MACHINE",
+      "desc": "machine",
+      "loc": "",
+      "flags": [
+        "CONTBIT",
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MACHINE-SWITCH",
+      "desc": "switch",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "TURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MAILBOX",
+      "desc": "small mailbox",
+      "loc": "",
+      "flags": [
+        "CONTBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MAP",
+      "desc": "ancient map",
+      "loc": "",
+      "flags": [
+        "INVISIBLE",
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MATCH",
+      "desc": "matchbook",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MIRROR-1",
+      "desc": "mirror",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MIRROR-2",
+      "desc": "mirror",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "MOUNTAIN-RANGE",
+      "desc": "mountain range",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "NEST",
+      "desc": "bird's nest",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT",
+        "CONTBIT",
+        "OPENBIT",
+        "SEARCHBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "OWNERS-MANUAL",
+      "desc": "ZORK owner's manual",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "PAINTING",
+      "desc": "painting",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "PEDESTAL",
+      "desc": "pedestal",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CONTBIT",
+        "OPENBIT",
+        "SURFACEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "POT-OF-GOLD",
+      "desc": "pot of gold",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "INVISIBLE"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "PRAYER",
+      "desc": "prayer",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "SACREDBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "PUMP",
+      "desc": "hand-held air pump",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "PUNCTURED-BOAT",
+      "desc": "punctured boat",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "PUTTY",
+      "desc": "viscous material",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RAILING",
+      "desc": "wooden railing",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RAINBOW",
+      "desc": "rainbow",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RAISED-BASKET",
+      "desc": "basket",
+      "loc": "",
+      "flags": [
+        "TRANSBIT",
+        "TRYTAKEBIT",
+        "CONTBIT",
+        "OPENBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RED-BUTTON",
+      "desc": "red button",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RIVER",
+      "desc": "river",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "ROPE",
+      "desc": "rope",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "SACREDBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RUG",
+      "desc": "carpet",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "RUSTY-KNIFE",
+      "desc": "rusty knife",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TRYTAKEBIT",
+        "WEAPONBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SAND",
+      "desc": "sand",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SANDWICH-BAG",
+      "desc": "brown sack",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "CONTBIT",
+        "BURNBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SCARAB",
+      "desc": "beautiful jeweled scarab",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "INVISIBLE"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SCEPTRE",
+      "desc": "sceptre",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "WEAPONBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SCREWDRIVER",
+      "desc": "screwdriver",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SHOVEL",
+      "desc": "shovel",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SKULL",
+      "desc": "crystal skull",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SLIDE",
+      "desc": "chute",
+      "loc": "",
+      "flags": [
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SONGBIRD",
+      "desc": "songbird",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "STILETTO",
+      "desc": "stiletto",
+      "loc": "",
+      "flags": [
+        "WEAPONBIT",
+        "TRYTAKEBIT",
+        "TAKEBIT",
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "SWORD",
+      "desc": "sword",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "WEAPONBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TEETH",
+      "desc": "set of teeth",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "THIEF",
+      "desc": "thief",
+      "loc": "",
+      "flags": [
+        "ACTORBIT",
+        "INVISIBLE",
+        "CONTBIT",
+        "OPENBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TIMBERS",
+      "desc": "broken timber",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TOOL-CHEST",
+      "desc": "group of tool chests",
+      "loc": "",
+      "flags": [
+        "CONTBIT",
+        "OPENBIT",
+        "TRYTAKEBIT",
+        "SACREDBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TORCH",
+      "desc": "torch",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "FLAMEBIT",
+        "ONBIT",
+        "LIGHTBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TRAP-DOOR",
+      "desc": "trap door",
+      "loc": "",
+      "flags": [
+        "DOORBIT",
+        "NDESCBIT",
+        "INVISIBLE"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TREE",
+      "desc": "tree",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TRIDENT",
+      "desc": "crystal trident",
+      "loc": "",
+      "flags": [
+        "TAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TROLL",
+      "desc": "troll",
+      "loc": "",
+      "flags": [
+        "ACTORBIT",
+        "OPENBIT",
+        "TRYTAKEBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TROPHY-CASE",
+      "desc": "trophy case",
+      "loc": "",
+      "flags": [
+        "TRANSBIT",
+        "CONTBIT",
+        "NDESCBIT",
+        "TRYTAKEBIT",
+        "SEARCHBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TRUNK",
+      "desc": "trunk of jewels",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "INVISIBLE"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "TUBE",
+      "desc": "tube",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "CONTBIT",
+        "READBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "WALL",
+      "desc": "surrounding wall",
+      "loc": "",
+      "flags": [],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "WATER",
+      "desc": "quantity of water",
+      "loc": "",
+      "flags": [
+        "TRYTAKEBIT",
+        "TAKEBIT",
+        "DRINKBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "WHITE-CLIFF",
+      "desc": "white cliffs",
+      "loc": "",
+      "flags": [
+        "NDESCBIT",
+        "CLIMBBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "WHITE-HOUSE",
+      "desc": "white house",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "WOODEN-DOOR",
+      "desc": "wooden door",
+      "loc": "",
+      "flags": [
+        "READBIT",
+        "DOORBIT",
+        "NDESCBIT",
+        "TRANSBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "WRENCH",
+      "desc": "wrench",
+      "loc": "",
+      "flags": [
+        "TAKEBIT",
+        "TOOLBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    },
+    {
+      "id": "YELLOW-BUTTON",
+      "desc": "yellow button",
+      "loc": "",
+      "flags": [
+        "NDESCBIT"
+      ],
+      "is_enemy": false,
+      "final_room_id": null,
+      "location_kind": "NO_LOC",
+      "container_chain": [],
+      "raw_loc": ""
+    }
+  ],
+  "enemies": []
+}
