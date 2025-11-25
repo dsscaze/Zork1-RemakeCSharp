@@ -1,0 +1,15 @@
+norte
+leste
+abrir janela
+entrar
+pegar saco
+examinar chamine
+oeste
+abrir estante
+mover tapete
+abrir alcapao
+pegar lanterna
+ligar lanterna
+descer
+olhar
+subir

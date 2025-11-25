@@ -419,7 +419,7 @@ private void MoverObjeto(string nomeItem)
             // Procura dentro de containers ABERTOS na sala
             foreach(var container in sala.Itens.Where(i => i.EhContainer() && i.EstaAberto()))
             {
-                var itemDentro = container.Conteudo.FirstOrDefault(i => i.Sinonimos.Contains(nomeItem));
+                var itemDentro = container.Conteudo.FirstOrDefault(i => i.Sinonimos.Contains(nomeItem) || i.Id == nomeItem);
                 if (itemDentro != null)
                 {
                     container.Conteudo.Remove(itemDentro);

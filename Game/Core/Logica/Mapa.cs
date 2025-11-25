@@ -73,7 +73,8 @@ namespace ZorkBrasil.Core.Logica
             // Itens da Cozinha
             var saco = new Item("sack", "Saco marrom", "Um saco marrom alongado cheirando a pimenta.", 
                 FlagsItem.Pegavel | FlagsItem.Container | FlagsItem.PodeAbrir | FlagsItem.EstaAberto);
-            saco.AdicionarSinonimo("bag", "sack", "brown");
+            saco.AdicionarSinonimo("bag", "sack", "brown", "saco", "marrom");
+            saco.DescricaoNoChao = "Um saco marrom alongado cheirando a pimenta.";
             
             var alho = new Item("garlic", "Dente de alho", "Um dente de alho.", FlagsItem.Pegavel | FlagsItem.Comestivel);
             alho.AdicionarSinonimo("alho", "garlic", "clove");
@@ -82,6 +83,7 @@ namespace ZorkBrasil.Core.Logica
             var garrafa = new Item("bottle", "Garrafa de vidro", "Uma garrafa de vidro transparente.", 
                 FlagsItem.Pegavel | FlagsItem.Container | FlagsItem.PodeAbrir | FlagsItem.EstaAberto);
             garrafa.AdicionarSinonimo("bottle", "garrafa", "glass");
+            garrafa.DescricaoNoChao = "Uma garrafa de vidro transparente.";
             
             // Água dentro da garrafa
             var agua = new Item("water", "Água", "Água clara e potável.", FlagsItem.Comestivel);
@@ -91,8 +93,13 @@ namespace ZorkBrasil.Core.Logica
             mesaCozinha.Conteudo.Add(saco);
             mesaCozinha.Conteudo.Add(garrafa);
             
+            // Chaminé
+            var chamine = new Item("chimney", "Chaminé", "Uma ampla chaminé, escura e cheia de fuligem.", FlagsItem.Cenario);
+            chamine.AdicionarSinonimo("chimney", "chamine", "fireplace", "lareira");
+            
             cozinha.Itens.Add(mesaCozinha);
             cozinha.Itens.Add(janelaFundos); // Mesma janela do lado de fora
+            cozinha.Itens.Add(chamine);
 
 
             // --- SALA DE ESTAR ---
@@ -108,7 +115,11 @@ namespace ZorkBrasil.Core.Logica
             var lanterna = new Item("lantern", "Lanterna de latão", "Uma lanterna alimentada por bateria.", FlagsItem.Pegavel | FlagsItem.FonteDeLuz);
             lanterna.AdicionarSinonimo("lanterna", "lampada", "luz");
 
-            var trofeuCase = new Item("trophy_case", "Estante de Troféus", "Uma estante para guardar tesouros.", FlagsItem.Container | FlagsItem.Cenario);
+            var trofeuCase = new Item("trophy_case", "Estante de Troféus", "Uma estante para guardar tesouros.", FlagsItem.Container | FlagsItem.Cenario | FlagsItem.PodeAbrir | FlagsItem.EstaAberto);
+            trofeuCase.AdicionarSinonimo("trophy", "case", "estante", "trofeu", "trofeus");
+
+            var portaMadeira = new Item("wooden_door", "Porta de madeira", "A porta de madeira está coberta com runas estranhas.", FlagsItem.Cenario);
+            portaMadeira.AdicionarSinonimo("wooden", "door", "porta", "madeira", "inscricoes", "runas");
 
             var tapete = new Item("rug", "Tapete persa", "Um tapete persa muito caro e pesado.", FlagsItem.Cenario);
             tapete.AdicionarSinonimo("tapete");
@@ -118,6 +129,7 @@ namespace ZorkBrasil.Core.Logica
             salaEstar.Itens.Add(lanterna);
             salaEstar.Itens.Add(trofeuCase);
             salaEstar.Itens.Add(tapete);
+            salaEstar.Itens.Add(portaMadeira);
 
 
             // --- PORÃO (CELLAR) ---

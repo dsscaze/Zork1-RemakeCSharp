@@ -62,14 +62,8 @@ namespace ZorkBrasil.Core.Modelos
         // Método auxiliar para obter descrição baseado se já visitou
         public string ObterDescricao()
         {
-            // Se tem luz (natural ou artificial flag), mostra texto. Senão, breu.
-            // Nota: A lógica de verificar lanterna do jogador fica no Motor, aqui verificamos a sala.
-            if (!Flags.HasFlag(FlagsSala.Iluminada))
-            {
-                // O Motor deve checar se o jogador tem lanterna antes de chamar isso,
-                // ou retornamos um status indicando escuridão.
-                return "Está breu. Você pode ser devorado por um Grue.";
-            }
+            // A lógica de verificar luz (natural ou artificial) fica no Motor.
+            // Este método apenas retorna a descrição da sala.
 
             // Se já visitou e tem descrição curta, usa ela (padrão Zork "Superbrief" ou "Brief")
             if (Flags.HasFlag(FlagsSala.Visitada) && !string.IsNullOrEmpty(DescricaoCurta))
